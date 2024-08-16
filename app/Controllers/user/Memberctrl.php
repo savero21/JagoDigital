@@ -13,6 +13,8 @@ class Memberctrl extends BaseController
 {
     private $MemberModels;
     private $kategoriVideoModel;
+    private $DPDModels;
+    private $DPCModels;
 
     public function __construct()
     {

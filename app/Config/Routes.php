@@ -131,7 +131,7 @@ $routes->get('/profil', 'user\Profilctrl::edit');
 $routes->post('/profil/proses_edit', 'user\Profilctrl::edit');
 // end frond end routes
 $routes->get('/videos', 'user\Videoctrl::index');
-$routes->get('/videos/(:num)', 'user\Videoctrl::indexByCategory/$1');
+$routes->get('/videos/(:num)', 'user\Videoctrl::categoryDetails/$1');
 $routes->get('/video/detail/(:num)', 'user\Videoctrl::detail/$1');
 
 // route language home

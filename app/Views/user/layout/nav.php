@@ -30,31 +30,43 @@
                         <?php endif; ?>
                     </div>
                 </li>
-                               
+
                 <!-- New Video Categories Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?= base_url('/video-categories') ?>" data-page="video" class="nav-link <?= current_url() === base_url('/video-categories') ? 'active' : '' ?>" id="videoCategoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Kategori Video
+                    <a class="nav-link dropdown-toggle <?= current_url() === base_url('/video-categories') ? 'active' : '' ?>"
+                        href="<?= base_url('/video-categories') ?>"
+                        id="videoCategoriesDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                        Video Pembelajaran
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="videoCategoriesDropdown">
-                        <a class="dropdown-item" href="<?= base_url('/videos') ?>" class="nav-link <?= current_url() === base_url('/videos') ? 'active' : '' ?>">Data Video</a>
+                        <a class="dropdown-item <?= current_url() === base_url('/videos') ? 'active' : '' ?>"
+                            href="<?= base_url('/videos') ?>">
+                            Data Video
+                        </a>
                         <?php if (isset($videoCategories) && !empty($videoCategories)) : ?>
                             <?php foreach ($videoCategories as $category) : ?>
-                                <a class="dropdown-item" href="<?= base_url("/videos/{$category->id_katvideo}") ?>" class="nav-link <?= current_url() === base_url("/videos/{$category->id_katvideo}") ? 'active' : '' ?>">
+                                <a class="dropdown-item <?= current_url() === base_url("/videos/{$category->id_katvideo}") ? 'active' : '' ?>"
+                                    href="<?= base_url("/videos/{$category->id_katvideo}") ?>">
                                     <?= $category->nama_kategori_video ?>
                                 </a>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <p>No video categories available.</p>
+                            <p class="dropdown-item text-muted">No video categories available.</p>
                         <?php endif; ?>
                     </div>
                 </li>
+
+
                 <?php $userRole = session()->get('role'); ?>
                 <!-- Jika User -->
                 <?php if ($userRole === 'admin') : ?>
-                <li class="nav-item">
-                    <a href="<?= base_url('/admin') ?>" class="nav-link">Admin</a>
-                </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('/admin') ?>" class="nav-link">Admin</a>
+                    </li>
                 <?php endif; ?>
                 <!-- Dropdown Mobile-->
                 <li class="nav-item dropdown d-block d-lg-none">
