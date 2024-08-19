@@ -13,16 +13,11 @@ class Videoctrl extends BaseController
 {
     private $videoPembelajaranModels;
     private $kategoriVideoModels;
-    private $memberModels;
-    private $DPDModels;
 
     public function __construct()
     {
         $this->videoPembelajaranModels = new videoPembelajaranModels();
         $this->kategoriVideoModels = new KategoriVideoModels();
-        $this->memberModels = new MemberModels();
-        $this->DPDModels = new DPDModels();
-
     }
 
     // Method to list video categories
@@ -31,40 +26,47 @@ class Videoctrl extends BaseController
         $data = [
             'videoCategories' => $this->kategoriVideoModels->findAll(),
             'videos' => $this->videoPembelajaranModels->findAll(),
-            'memberCategories' => $this->memberModels->findAll(), // Fetch member categories
-            'dpd' => $this->DPDModels->findAll(),
-
         ];
 
         return view('user/video/index', $data);
     }
 
-    // Method to view video details
     public function detail($id)
     {
-        $data['video'] = $this->videoPembelajaranModels->find($id);
-        $data['related_videos'] = $this->videoPembelajaranModels->where('id_katvideo', $data['video']['id_katvideo'])->where('id_video !=', $id)->findAll();
-        $data['memberCategories'] = $this->memberModels->findAll(); // Fetch member categories
-        $data['dpd'] = $this->DPDModels->findAll(); // Fetch member categories
+        // Fetch the video by ID
+        $videoModel = new videoPembelajaranModels();
 
-        // Tampilkan 404 error jika data tidak ditemukan
-        if (!$data['video']) {
-            throw PageNotFoundException::forPageNotFound();
-        }
+        // Fetch the video with its category
+        $video = $videoModel->getVideoWithCategory($id);
 
-        return view('user/video/detail', $data);
+        // Fetch related videos in the same category, excluding the current video
+        $related_videos = $videoModel->getRelatedVideos($id, $video->id_katvideo);
+
+        // Limit the related videos to 4 and shuffle them
+        $related_videos = array_slice($related_videos, 0, 4); // Limit to 4 videos
+        shuffle($related_videos); // Shuffle to ensure randomness
+
+        // Pass data to the view
+        return view('user/video/detail', [
+            'video' => $video,
+            'related_videos' => $related_videos
+        ]);
     }
 
-    // Method to list videos by category
-    public function indexByCategory($id_katvideo)
+    public function categoryDetails($id_katvideo)
     {
-        $data = [
-            'videoCategories' => $this->kategoriVideoModels->findAll(),
-            'videos' => $this->videoPembelajaranModels->where('id_katvideo', $id_katvideo)->findAll(),
-            'dpd' => $this->DPDModels->findAll(),
+        $data['selectedCategory'] = $this->kategoriVideoModels->find($id_katvideo);
+        $data['videos'] = $this->videoPembelajaranModels->where('id_katvideo', $id_katvideo)->findAll();
+        return view('user/video/index_category', $data);
+    }
 
-        ];
 
-        return view('user/video/index', $data);
+    public function videoCategories()
+    {
+        // Fetch all video categories
+        $data['videoCategories'] = $this->kategoriVideoModels->findAll();
+
+        // Load the view with video categories data
+        return view('user/layout/nav', $data);
     }
 }
