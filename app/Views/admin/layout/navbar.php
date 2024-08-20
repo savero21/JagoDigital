@@ -4,7 +4,9 @@
         <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
         <div class="app-branding">
             <a class="app-logo" href="<?= base_url('/') ?>"></a>
-            <h1 class="m-0 display-6 text-uppercase text-primary1 font-weight-bold">M<span class="text-white font-weight-normal">PI</span></h1>
+            <h1 class="m-0 display-6 text-uppercase text-primary1 font-weight-bold" style="font-size: 30px;">
+    Jago<span class="text-white font-weight-normal">-Admin</span>
+</h1>
             </a>
         </div><!--//app-branding-->
 
@@ -31,7 +33,7 @@
                                 <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
                             </svg>
                         </span>
-                        <span class="nav-link-text">Data Admin</span>
+                        <span class="nav-link-text">Admin Jago</span>
                     </a>
                 </li>
 

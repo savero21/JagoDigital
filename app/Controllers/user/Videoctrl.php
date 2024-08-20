@@ -13,11 +13,13 @@ class Videoctrl extends BaseController
 {
     private $videoPembelajaranModels;
     private $kategoriVideoModels;
+    private $DPDModels;
 
     public function __construct()
     {
         $this->videoPembelajaranModels = new videoPembelajaranModels();
         $this->kategoriVideoModels = new KategoriVideoModels();
+        $this->DPDModels = new DPDModels();
     }
 
     // Method to list video categories
@@ -26,6 +28,7 @@ class Videoctrl extends BaseController
         $data = [
             'videoCategories' => $this->kategoriVideoModels->findAll(),
             'videos' => $this->videoPembelajaranModels->findAll(),
+            'dpd' => $this->DPDModels->findAll(),
         ];
 
         return view('user/video/index', $data);
@@ -50,6 +53,7 @@ class Videoctrl extends BaseController
         return view('user/video/detail', [
             'video' => $video,
             'related_videos' => $related_videos
+            
         ]);
     }
 

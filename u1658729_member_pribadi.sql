@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 12 Jun 2024 pada 13.10
--- Versi server: 10.11.6-MariaDB-cll-lve
--- Versi PHP: 8.1.25
+-- Generation Time: Aug 19, 2024 at 03:09 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.2.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint UNSIGNED NOT NULL,
   `version` varchar(255) NOT NULL,
   `class` varchar(255) NOT NULL,
   `group` varchar(255) NOT NULL,
   `namespace` varchar(255) NOT NULL,
-  `time` int(11) NOT NULL,
-  `batch` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+  `time` int NOT NULL,
+  `batch` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
@@ -50,20 +50,20 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_aktivitas`
+-- Table structure for table `tb_aktivitas`
 --
 
 CREATE TABLE `tb_aktivitas` (
-  `id_aktivitas` int(5) UNSIGNED NOT NULL,
+  `id_aktivitas` int UNSIGNED NOT NULL,
   `nama_aktivitas_in` varchar(200) NOT NULL,
   `nama_aktivitas_en` varchar(200) NOT NULL,
   `foto_aktivitas` varchar(255) NOT NULL,
-  `deskripsi_aktivitas_in` text DEFAULT NULL,
-  `deskripsi_aktivitas_en` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+  `deskripsi_aktivitas_in` text,
+  `deskripsi_aktivitas_en` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `tb_aktivitas`
+-- Dumping data for table `tb_aktivitas`
 --
 
 INSERT INTO `tb_aktivitas` (`id_aktivitas`, `nama_aktivitas_in`, `nama_aktivitas_en`, `foto_aktivitas`, `deskripsi_aktivitas_in`, `deskripsi_aktivitas_en`) VALUES
@@ -73,23 +73,23 @@ INSERT INTO `tb_aktivitas` (`id_aktivitas`, `nama_aktivitas_in`, `nama_aktivitas
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_artikel`
+-- Table structure for table `tb_artikel`
 --
 
 CREATE TABLE `tb_artikel` (
-  `id_artikel` int(5) UNSIGNED NOT NULL,
-  `id_kategori` int(5) NOT NULL,
-  `judul_artikel` varchar(100) NOT NULL,
-  `foto_artikel` varchar(255) NOT NULL,
-  `deskripsi_artikel` longtext NOT NULL,
-  `tags` varchar(255) NOT NULL,
-  `views` int(25) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp(),
-  `slug` varchar(100) DEFAULT NULL
+  `id_artikel` int UNSIGNED NOT NULL,
+  `id_kategori` int NOT NULL,
+  `judul_artikel` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `foto_artikel` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `deskripsi_artikel` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  `tags` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `views` int NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `slug` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_artikel`
+-- Dumping data for table `tb_artikel`
 --
 
 INSERT INTO `tb_artikel` (`id_artikel`, `id_kategori`, `judul_artikel`, `foto_artikel`, `deskripsi_artikel`, `tags`, `views`, `created_at`, `slug`) VALUES
@@ -107,18 +107,18 @@ INSERT INTO `tb_artikel` (`id_artikel`, `id_kategori`, `judul_artikel`, `foto_ar
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_dpc`
+-- Table structure for table `tb_dpc`
 --
 
 CREATE TABLE `tb_dpc` (
-  `id_dpc` int(11) NOT NULL,
-  `id_dpd` int(11) NOT NULL,
+  `id_dpc` int NOT NULL,
+  `id_dpd` int NOT NULL,
   `nama_dpc` varchar(255) NOT NULL,
   `wilayah_kerja_dpc` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_dpc`
+-- Dumping data for table `tb_dpc`
 --
 
 INSERT INTO `tb_dpc` (`id_dpc`, `id_dpd`, `nama_dpc`, `wilayah_kerja_dpc`) VALUES
@@ -126,22 +126,21 @@ INSERT INTO `tb_dpc` (`id_dpc`, `id_dpd`, `nama_dpc`, `wilayah_kerja_dpc`) VALUE
 (3, 1, 'Sidoarjo', 'Sidoarjo'),
 (5, 1, 'Banyuwangi', 'Banyuwangi'),
 (6, 3, 'Bandung', 'Bandung'),
-(7, 3, 'Cimahi', 'Cimahi'),
-(8, 4, 'Serang', 'Serang');
+(7, 3, 'Cimahi', 'Cimahi');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_dpd`
+-- Table structure for table `tb_dpd`
 --
 
 CREATE TABLE `tb_dpd` (
-  `id_dpd` int(11) NOT NULL,
+  `id_dpd` int NOT NULL,
   `nama_dpd` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_dpd`
+-- Dumping data for table `tb_dpd`
 --
 
 INSERT INTO `tb_dpd` (`id_dpd`, `nama_dpd`) VALUES
@@ -152,16 +151,16 @@ INSERT INTO `tb_dpd` (`id_dpd`, `nama_dpd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kategori`
+-- Table structure for table `tb_kategori`
 --
 
 CREATE TABLE `tb_kategori` (
-  `id_kategori` int(11) NOT NULL,
-  `nama_kategori` varchar(20) NOT NULL
+  `id_kategori` int NOT NULL,
+  `nama_kategori` varchar(20) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_kategori`
+-- Dumping data for table `tb_kategori`
 --
 
 INSERT INTO `tb_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -170,33 +169,55 @@ INSERT INTO `tb_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_member`
+-- Table structure for table `tb_kategori_video`
+--
+
+CREATE TABLE `tb_kategori_video` (
+  `id_katvideo` int NOT NULL,
+  `nama_kategori_video` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_kategori_video`
+--
+
+INSERT INTO `tb_kategori_video` (`id_katvideo`, `nama_kategori_video`) VALUES
+(1, 'Tutorial Pemrograman'),
+(2, 'Optimasi SEO dan Pemasaran Konten'),
+(3, 'Pengembangan Aplikasi Mobile dan Web'),
+(4, 'Manajemen Media Sosial dan Iklan Berbayar'),
+(5, 'Cybersecurity dan Keamanan Data');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_member`
 --
 
 CREATE TABLE `tb_member` (
-  `id_member` int(11) NOT NULL,
+  `id_member` int NOT NULL,
   `role` varchar(255) NOT NULL DEFAULT 'user',
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nama_member` varchar(50) NOT NULL,
-  `id_dpc` int(11) DEFAULT NULL,
+  `id_dpc` int DEFAULT NULL,
   `status_kepengurusan` varchar(100) DEFAULT NULL,
-  `alamat_member` text DEFAULT NULL,
+  `alamat_member` text,
   `no_hp_member` varchar(50) DEFAULT NULL,
   `email_member` varchar(50) DEFAULT NULL,
   `ig_member` varchar(50) DEFAULT NULL,
   `fb_member` varchar(50) DEFAULT NULL,
-  `pendidikan_member` text DEFAULT NULL,
-  `pekerjaan_member` text DEFAULT NULL,
-  `sertifikasi_member` text DEFAULT NULL,
+  `pendidikan_member` text,
+  `pekerjaan_member` text,
+  `sertifikasi_member` text,
   `jenis_kelamin` varchar(30) DEFAULT NULL,
   `foto_member` varchar(255) DEFAULT NULL,
   `cv_member` varchar(255) DEFAULT NULL,
   `slug` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_member`
+-- Dumping data for table `tb_member`
 --
 
 INSERT INTO `tb_member` (`id_member`, `role`, `username`, `password`, `nama_member`, `id_dpc`, `status_kepengurusan`, `alamat_member`, `no_hp_member`, `email_member`, `ig_member`, `fb_member`, `pendidikan_member`, `pekerjaan_member`, `sertifikasi_member`, `jenis_kelamin`, `foto_member`, `cv_member`, `slug`) VALUES
@@ -215,20 +236,20 @@ INSERT INTO `tb_member` (`id_member`, `role`, `username`, `password`, `nama_memb
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengumuman`
+-- Table structure for table `tb_pengumuman`
 --
 
 CREATE TABLE `tb_pengumuman` (
-  `id_pengumuman` int(11) NOT NULL,
+  `id_pengumuman` int NOT NULL,
   `judul_pengumuman` varchar(255) NOT NULL,
   `poster_pengumuman` varchar(255) NOT NULL,
   `deskripsi_pengumuman` text NOT NULL,
   `mulai_pengumuman` date NOT NULL,
   `akhir_pengumuman` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_pengumuman`
+-- Dumping data for table `tb_pengumuman`
 --
 
 INSERT INTO `tb_pengumuman` (`id_pengumuman`, `judul_pengumuman`, `poster_pengumuman`, `deskripsi_pengumuman`, `mulai_pengumuman`, `akhir_pengumuman`) VALUES
@@ -237,20 +258,20 @@ INSERT INTO `tb_pengumuman` (`id_pengumuman`, `judul_pengumuman`, `poster_pengum
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_produk`
+-- Table structure for table `tb_produk`
 --
 
 CREATE TABLE `tb_produk` (
-  `id_produk` int(5) UNSIGNED NOT NULL,
+  `id_produk` int UNSIGNED NOT NULL,
   `nama_produk_in` varchar(200) NOT NULL,
   `nama_produk_en` varchar(200) NOT NULL,
   `foto_produk` varchar(255) NOT NULL,
-  `deskripsi_produk_in` text DEFAULT NULL,
-  `deskripsi_produk_en` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+  `deskripsi_produk_in` text,
+  `deskripsi_produk_en` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `tb_produk`
+-- Dumping data for table `tb_produk`
 --
 
 INSERT INTO `tb_produk` (`id_produk`, `nama_produk_in`, `nama_produk_en`, `foto_produk`, `deskripsi_produk_in`, `deskripsi_produk_en`) VALUES
@@ -261,32 +282,32 @@ INSERT INTO `tb_produk` (`id_produk`, `nama_produk_in`, `nama_produk_en`, `foto_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_profil`
+-- Table structure for table `tb_profil`
 --
 
 CREATE TABLE `tb_profil` (
-  `id_profil` int(5) UNSIGNED NOT NULL,
+  `id_profil` int UNSIGNED NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nama_perusahaan` varchar(100) NOT NULL,
   `logo_perusahaan` varchar(100) NOT NULL,
-  `deskripsi_perusahaan_in` text DEFAULT NULL,
-  `deskripsi_perusahaan_en` text DEFAULT NULL,
-  `deskripsi_kontak_in` text DEFAULT NULL,
-  `deskripsi_kontak_en` text DEFAULT NULL,
-  `link_maps` text DEFAULT NULL,
-  `link_whatsapp` text DEFAULT NULL,
+  `deskripsi_perusahaan_in` text,
+  `deskripsi_perusahaan_en` text,
+  `deskripsi_kontak_in` text,
+  `deskripsi_kontak_en` text,
+  `link_maps` text,
+  `link_whatsapp` text,
   `favicon_website` varchar(100) NOT NULL,
   `title_website` varchar(100) NOT NULL,
   `foto_utama` varchar(100) NOT NULL,
-  `alamat` text DEFAULT NULL,
+  `alamat` text,
   `no_hp` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `teks_footer` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `tb_profil`
+-- Dumping data for table `tb_profil`
 --
 
 INSERT INTO `tb_profil` (`id_profil`, `username`, `password`, `nama_perusahaan`, `logo_perusahaan`, `deskripsi_perusahaan_in`, `deskripsi_perusahaan_en`, `deskripsi_kontak_in`, `deskripsi_kontak_en`, `link_maps`, `link_whatsapp`, `favicon_website`, `title_website`, `foto_utama`, `alamat`, `no_hp`, `email`, `teks_footer`) VALUES
@@ -295,163 +316,219 @@ INSERT INTO `tb_profil` (`id_profil`, `username`, `password`, `nama_perusahaan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_slider`
+-- Table structure for table `tb_slider`
 --
 
 CREATE TABLE `tb_slider` (
-  `id_slider` int(5) UNSIGNED NOT NULL,
+  `id_slider` int UNSIGNED NOT NULL,
   `file_foto_slider` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data untuk tabel `tb_slider`
+-- Dumping data for table `tb_slider`
 --
 
 INSERT INTO `tb_slider` (`id_slider`, `file_foto_slider`) VALUES
 (10, 'PRIBADI-Indonesia_20012024110305.jpg'),
 (11, 'PRIBADI-Indonesia_20012024110359.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_video`
+--
+
+CREATE TABLE `tb_video` (
+  `id_video` int NOT NULL,
+  `judul_video` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `video_url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `thumbnail` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `deskripsi_video` text COLLATE utf8mb4_general_ci NOT NULL,
+  `id_katvideo` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_video`
+--
+
+INSERT INTO `tb_video` (`id_video`, `judul_video`, `video_url`, `thumbnail`, `deskripsi_video`, `id_katvideo`) VALUES
+(1, 'Belajar HTML dan CSS untuk Pemula', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', 'Thumb1.png', 'Panduan dasar untuk memulai belajar HTML dan CSS dari nol. Cocok untuk pemula.', 1),
+(2, 'Membuat Aplikasi Todo List dengan Laravel', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', 'thumb5.jpeg', 'Tutorial lengkap membuat aplikasi Todo List dengan Laravel, mulai dari setup hingga deployment.', 1),
+(3, 'Cara Meningkatkan SEO On-Page untuk Website Anda', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', 'thumb6.jpg', 'Video ini memberikan tips tentang cara mengoptimalkan SEO on-page untuk meningkatkan peringkat website di Google.', 1),
+(4, 'Optimasi SEO dan Pemasaran Konten', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', 'thumb4.jpeg', 'Pelajari bagaimana mengembangkan strategi konten marketing yang dapat meningkatkan engagement dan penjualan.', 2),
+(5, 'Belajar Flutter: Membangun Aplikasi Mobile Pertama', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', 'thumb7.jpg', 'Video ini memperkenalkan dasar-dasar Flutter dan menunjukkan cara membuat aplikasi mobile pertama Anda.', 2),
+(6, 'Membangun Aplikasi E-Commerce dengan React Native', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', 'thumb8.jpg', 'Video ini membahas cara membangun aplikasi e-commerce dari awal menggunakan React Native.', 2),
+(7, 'Python untuk Pemula: Dasar-Dasar dan Struktur Data', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', '1.png', 'Video ini membahas dasar-dasar Python, termasuk variabel, tipe data, dan struktur data seperti list dan dictionary.', 2),
+(8, 'Belajar JavaScript dari Nol: Pemahaman Dasar', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', '2.png', 'Video ini mengajarkan dasar-dasar JavaScript, termasuk variabel, fungsi, dan manipulasi DOM.', 1),
+(9, 'React JS: Membangun Aplikasi CRUD Sederhana', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', '5.png', 'Panduan membuat aplikasi CRUD sederhana menggunakan React JS. Cocok untuk pemula.', 1),
+(10, 'Panduan Membuat REST API dengan Node.js dan Expres', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', '4.png', 'Tutorial ini menjelaskan cara membuat REST API dari awal menggunakan Node.js dan Express.', 1),
+(11, 'Cara Mengoptimalkan Blog untuk SEO dan Monetisasi', 'https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview', '1_1.png', 'Panduan untuk meningkatkan SEO blog dan strategi monetisasi yang efektif.', 1);
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_aktivitas`
+-- Indexes for table `tb_aktivitas`
 --
 ALTER TABLE `tb_aktivitas`
   ADD PRIMARY KEY (`id_aktivitas`);
 
 --
--- Indeks untuk tabel `tb_artikel`
+-- Indexes for table `tb_artikel`
 --
 ALTER TABLE `tb_artikel`
   ADD PRIMARY KEY (`id_artikel`),
   ADD UNIQUE KEY `slug` (`slug`);
 
 --
--- Indeks untuk tabel `tb_dpc`
+-- Indexes for table `tb_dpc`
 --
 ALTER TABLE `tb_dpc`
   ADD PRIMARY KEY (`id_dpc`);
 
 --
--- Indeks untuk tabel `tb_dpd`
+-- Indexes for table `tb_dpd`
 --
 ALTER TABLE `tb_dpd`
   ADD PRIMARY KEY (`id_dpd`);
 
 --
--- Indeks untuk tabel `tb_kategori`
+-- Indexes for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `tb_member`
+-- Indexes for table `tb_kategori_video`
+--
+ALTER TABLE `tb_kategori_video`
+  ADD PRIMARY KEY (`id_katvideo`);
+
+--
+-- Indexes for table `tb_member`
 --
 ALTER TABLE `tb_member`
   ADD PRIMARY KEY (`id_member`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indeks untuk tabel `tb_pengumuman`
+-- Indexes for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   ADD PRIMARY KEY (`id_pengumuman`);
 
 --
--- Indeks untuk tabel `tb_produk`
+-- Indexes for table `tb_produk`
 --
 ALTER TABLE `tb_produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indeks untuk tabel `tb_profil`
+-- Indexes for table `tb_profil`
 --
 ALTER TABLE `tb_profil`
   ADD PRIMARY KEY (`id_profil`);
 
 --
--- Indeks untuk tabel `tb_slider`
+-- Indexes for table `tb_slider`
 --
 ALTER TABLE `tb_slider`
   ADD PRIMARY KEY (`id_slider`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `tb_video`
+--
+ALTER TABLE `tb_video`
+  ADD PRIMARY KEY (`id_video`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_aktivitas`
+-- AUTO_INCREMENT for table `tb_aktivitas`
 --
 ALTER TABLE `tb_aktivitas`
-  MODIFY `id_aktivitas` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_aktivitas` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_artikel`
+-- AUTO_INCREMENT for table `tb_artikel`
 --
 ALTER TABLE `tb_artikel`
-  MODIFY `id_artikel` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_artikel` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_dpc`
+-- AUTO_INCREMENT for table `tb_dpc`
 --
 ALTER TABLE `tb_dpc`
-  MODIFY `id_dpc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_dpc` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_dpd`
+-- AUTO_INCREMENT for table `tb_dpd`
 --
 ALTER TABLE `tb_dpd`
-  MODIFY `id_dpd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_dpd` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kategori`
+-- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_member`
+-- AUTO_INCREMENT for table `tb_kategori_video`
+--
+ALTER TABLE `tb_kategori_video`
+  MODIFY `id_katvideo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tb_member`
 --
 ALTER TABLE `tb_member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengumuman`
+-- AUTO_INCREMENT for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
-  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengumuman` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_produk`
+-- AUTO_INCREMENT for table `tb_produk`
 --
 ALTER TABLE `tb_produk`
-  MODIFY `id_produk` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produk` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_profil`
+-- AUTO_INCREMENT for table `tb_profil`
 --
 ALTER TABLE `tb_profil`
-  MODIFY `id_profil` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_profil` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_slider`
+-- AUTO_INCREMENT for table `tb_slider`
 --
 ALTER TABLE `tb_slider`
-  MODIFY `id_slider` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_slider` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tb_video`
+--
+ALTER TABLE `tb_video`
+  MODIFY `id_video` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
