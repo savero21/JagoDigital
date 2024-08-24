@@ -8,7 +8,6 @@ use App\Models\KategoriVideoModels;
 use App\Models\MemberModels;
 use App\Models\DPDModels;
 
-
 class Videoctrl extends BaseController
 {
     private $videoPembelajaranModels;
@@ -37,33 +36,29 @@ class Videoctrl extends BaseController
     public function detail($id)
     {
         // Fetch the video by ID
-        $videoModel = new videoPembelajaranModels();
-
-        // Fetch the video with its category
-        $video = $videoModel->getVideoWithCategory($id);
+        $video = $this->videoPembelajaranModels->getVideoWithCategory($id);
 
         // Fetch related videos in the same category, excluding the current video
-        $related_videos = $videoModel->getRelatedVideos($id, $video->id_katvideo);
+        $related_videos = $this->videoPembelajaranModels->getRelatedVideos($id, $video->id_katvideo);
 
         // Limit the related videos to 4 and shuffle them
         $related_videos = array_slice($related_videos, 0, 4); // Limit to 4 videos
         shuffle($related_videos); // Shuffle to ensure randomness
-
+        
         // Pass data to the view
         return view('user/video/detail', [
             'video' => $video,
             'related_videos' => $related_videos
-            
         ]);
     }
 
+    
     public function categoryDetails($id_katvideo)
     {
         $data['selectedCategory'] = $this->kategoriVideoModels->find($id_katvideo);
         $data['videos'] = $this->videoPembelajaranModels->where('id_katvideo', $id_katvideo)->findAll();
         return view('user/video/index_category', $data);
     }
-
 
     public function videoCategories()
     {

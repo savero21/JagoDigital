@@ -29,7 +29,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'u1658729_member_pribadi',
+        'database' => 'jagodm',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

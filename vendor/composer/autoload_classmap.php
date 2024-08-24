@@ -376,6 +376,7 @@ return array(
     'Composer\\Pcre\\PHPStan\\PregMatchFlags' => $vendorDir . '/composer/pcre/src/PHPStan/PregMatchFlags.php',
     'Composer\\Pcre\\PHPStan\\PregMatchParameterOutTypeExtension' => $vendorDir . '/composer/pcre/src/PHPStan/PregMatchParameterOutTypeExtension.php',
     'Composer\\Pcre\\PHPStan\\PregMatchTypeSpecifyingExtension' => $vendorDir . '/composer/pcre/src/PHPStan/PregMatchTypeSpecifyingExtension.php',
+    'Composer\\Pcre\\PHPStan\\PregReplaceCallbackClosureTypeExtension' => $vendorDir . '/composer/pcre/src/PHPStan/PregReplaceCallbackClosureTypeExtension.php',
     'Composer\\Pcre\\PHPStan\\UnsafeStrictGroupsCallRule' => $vendorDir . '/composer/pcre/src/PHPStan/UnsafeStrictGroupsCallRule.php',
     'Composer\\Pcre\\PcreException' => $vendorDir . '/composer/pcre/src/PcreException.php',
     'Composer\\Pcre\\Preg' => $vendorDir . '/composer/pcre/src/Preg.php',
