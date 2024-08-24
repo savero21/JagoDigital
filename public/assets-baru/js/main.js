@@ -65,6 +65,8 @@
 
     // Dropdown on mouse hover
 
+    
+
     document.getElementById('profileDropdownToggle').addEventListener('click', function () {
         var dropdownMenu = document.querySelector('#profileDropdown');
         dropdownMenu.classList.toggle('show');
@@ -95,7 +97,7 @@
         $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
-    
+
 
 
     // Main News carousel
