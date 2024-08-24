@@ -1,4 +1,11 @@
 <!-- Navbar Start -->
+<?php
+echo current_url();
+
+print_r(base_url('/videos'));
+
+//  dd()
+?>
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
         <a href="/" class="navbar-brand d-block d-lg-none">
@@ -33,8 +40,8 @@
 
                 <!-- New Video Categories Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?= current_url() === base_url('/video-categories') ? 'active' : '' ?>"
-                        href="<?= base_url('/video-categories') ?>"
+                    <a data-page="videos"  class="nav-link dropdown-toggle <?= current_url() == base_url('/videos') ? 'active' : '' ?>"
+                        href="<?= base_url('/videos') ?>"
                         id="videoCategoriesDropdown"
                         role="button"
                         data-toggle="dropdown"
@@ -59,7 +66,6 @@
                         <?php endif; ?>
                     </div>
                 </li>
-
 
                 <?php $userRole = session()->get('role'); ?>
                 <!-- Jika User -->
@@ -93,5 +99,32 @@
 
         </div>
     </nav>
+
+    <script>
+        if (document) {
+            setTimeout(function() {
+                const url = location.href;
+                // document.querySelectorAll('.nav-item').forEach((link) => {
+                    
+                //     console.dir(link.baseURI, url);
+
+                //     if (link.baseURI === url) {
+                //         link.classList.add('active');
+                //     }
+                // })
+                
+                document.querySelectorAll('.nav-item a').forEach((link) => {
+                    
+                    console.dir(link, url);
+
+                    if (link.href === url) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                })
+            }, 1000)
+        }
+    </script>
 </div>
 <!-- Navbar End -->
