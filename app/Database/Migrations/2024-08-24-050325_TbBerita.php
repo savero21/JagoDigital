@@ -20,7 +20,7 @@ class TbBerita extends Migration
                 'constraint' => '255',
                 'null'       => false,
             ],
-            'foto_berita' => [
+            'poster_berita' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => true,
@@ -29,12 +29,12 @@ class TbBerita extends Migration
                 'type'       => 'TEXT',
                 'null'       => true,
             ],
-            'tags_berita' => [
+            'mulai_berita' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => true,
             ],
-            'datetime_berita' => [
+            'akhir_berita' => [
                 'type'       => 'DATETIME',
                 'null'       => false,
             ],
