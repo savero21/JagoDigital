@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 
 $routes->get('/',  'NewUser\BerandaController::index');
 $routes->get('/about', 'NewUser\BerandaController::about');
+$routes->get('/artikel', 'NewUser\BerandaController::artikel');
+$routes->get('/video', 'NewUser\BerandaController::video');
 
 
 //ADMIN
@@ -40,105 +42,110 @@ $routes->get('login', 'Login::index');
 $routes->post('login/process', 'Login::process');
 $routes->get('logout', 'Login::logout');
 
+$routes->get('admin', 'admin\Dashboardctrl::routetoDashboard');
+$routes->get('admin/dashboard', 'admin\Dashboardctrl::index');
+
+$routes->get('admin/artikel/index', 'admin\ArtikelController::index');
+$routes->get('admin/artikel/tambah', 'admin\ArtikelController::create');
+$routes->post('admin/artikel/store', 'admin\ArtikelController::store');
+$routes->get('admin/artikel/delete/(:num)', 'admin\ArtikelController::delete/$1');
+$routes->get('admin/artikel/edit/(:num)', 'admin\ArtikelController::edit/$1');
+$routes->post('admin/artikel/update/(:num)', 'admin\ArtikelController::update/$1');
+
+$routes->get('admin/kategori/index', 'admin\Kategori::index');
+$routes->get('admin/kategori/tambah', 'admin\Kategori::tambah');
+$routes->post('admin/kategori/proses_tambah', 'admin\Kategori::proses_tambah');
+$routes->get('admin/kategori/edit/(:num)', 'admin\Kategori::edit/$1');
+$routes->post('admin/kategori/proses_edit/(:num)', 'admin\Kategori::proses_edit/$1');
+$routes->get('admin/kategori/delete/(:any)', 'admin\Kategori::delete/$1');
+
+$routes->get('admin/dpd/index', 'admin\DPD::index');
+$routes->get('admin/dpd/tambah', 'admin\DPD::tambah');
+$routes->post('admin/dpd/proses_tambah', 'admin\DPD::proses_tambah');
+$routes->get('admin/dpd/edit/(:num)', 'admin\DPD::edit/$1');
+$routes->post('admin/dpd/proses_edit/(:num)', 'admin\DPD::proses_edit/$1');
+$routes->get('admin/dpd/delete/(:any)', 'admin\DPD::delete/$1');
+
+$routes->get('admin/dpc/index', 'admin\DPC::index');
+$routes->get('admin/dpc/tambah', 'admin\DPC::tambah');
+$routes->post('admin/dpc/proses_tambah', 'admin\DPC::proses_tambah');
+$routes->get('admin/dpc/edit/(:num)', 'admin\DPC::edit/$1');
+$routes->post('admin/dpc/proses_edit/(:num)', 'admin\DPC::proses_edit/$1');
+$routes->get('admin/dpc/delete/(:any)', 'admin\DPC::delete/$1');
+
+$routes->get('admin/artikel/index', 'admin\Artikel::index');
+$routes->get('admin/artikel/detail/(:num)/(:any)', 'admin\Artikel::viewArtikel/$1/$2');
+$routes->get('admin/artikel/tambah', 'admin\Artikel::tambah');
+$routes->post('admin/artikel/proses_tambah', 'admin\Artikel::proses_tambah');
+$routes->get('/admin/artikel/edit/(:num)', 'admin\Artikel::edit/$1');
+$routes->post('admin/artikel/proses_edit/(:num)', 'admin\Artikel::proses_edit/$1');
+$routes->get('admin/artikel/delete/(:any)', 'admin\Artikel::delete/$1');
+
+// Member
+$routes->get('admin/member/index', 'admin\Member::index');
+$routes->get('admin/member/detail/(:num)/(:any)', 'admin\Member::viewMember/$1/$2');
+$routes->get('admin/member/tambah', 'admin\Member::tambah');
+$routes->post('admin/member/proses_tambah', 'admin\Member::proses_tambah');
+$routes->get('/admin/member/edit/(:num)', 'admin\Member::edit/$1');
+$routes->post('admin/member/proses_edit/(:num)', 'admin\Member::proses_edit/$1');
+$routes->get('admin/member/delete/(:any)', 'admin\Member::delete/$1');
+// Akhir Member
+
+// Kategori Video
+$routes->get('admin/kategori_videos/index', 'admin\KategoriVideo::index');
+$routes->get('admin/kategori_videos/tambah', 'admin\KategoriVideo::tambah');
+$routes->post('admin/kategori_videos/proses_tambah', 'admin\KategoriVideo::proses_tambah');
+$routes->get('admin/kategori_videos/edit/(:num)', 'admin\KategoriVideo::edit/$1');
+$routes->post('admin/kategori_videos/proses_edit/(:num)', 'admin\KategoriVideo::proses_edit/$1');
+$routes->get('admin/kategori_videos/delete/(:any)', 'admin\KategoriVideo::delete/$1');
+
+// Video
+$routes->get('admin/video_pembelajaran/index', 'admin\Video::index');
+$routes->get('admin/video_pembelajaran/tambah', 'admin\Video::tambah');
+$routes->post('admin/video_pembelajaran/proses_tambah', 'admin\Video::proses_tambah');
+$routes->get('admin/video_pembelajaran/edit/(:num)', 'admin\Video::edit/$1');
+$routes->post('admin/video_pembelajaran/proses_edit/(:num)', 'admin\Video::proses_edit/$1');
+$routes->get('admin/video_pembelajaran/delete/(:any)', 'admin\Video::delete/$1');
 
 
-    $routes->get('admin', 'admin\Dashboardctrl::routetoDashboard');
-    $routes->get('admin/dashboard', 'admin\Dashboardctrl::index');
+// Pengumuman
+$routes->get('admin/pengumuman/index', 'admin\Pengumuman::index');
+$routes->get('admin/pengumuman/tambah', 'admin\Pengumuman::tambah');
+$routes->post('admin/pengumuman/proses_tambah', 'admin\Pengumuman::proses_tambah');
+$routes->get('/admin/pengumuman/edit/(:num)', 'admin\Pengumuman::edit/$1');
+$routes->post('admin/pengumuman/proses_edit/(:num)', 'admin\Pengumuman::proses_edit/$1');
+$routes->get('admin/pengumuman/delete/(:any)', 'admin\Pengumuman::delete/$1');
+// Akhir Pengumuman
 
-    $routes->get('admin/kategori/index', 'admin\Kategori::index');
-    $routes->get('admin/kategori/tambah', 'admin\Kategori::tambah');
-    $routes->post('admin/kategori/proses_tambah', 'admin\Kategori::proses_tambah');
-    $routes->get('admin/kategori/edit/(:num)', 'admin\Kategori::edit/$1');
-    $routes->post('admin/kategori/proses_edit/(:num)', 'admin\Kategori::proses_edit/$1');
-    $routes->get('admin/kategori/delete/(:any)', 'admin\Kategori::delete/$1');
-    
-    $routes->get('admin/dpd/index', 'admin\DPD::index');
-    $routes->get('admin/dpd/tambah', 'admin\DPD::tambah');
-    $routes->post('admin/dpd/proses_tambah', 'admin\DPD::proses_tambah');
-    $routes->get('admin/dpd/edit/(:num)', 'admin\DPD::edit/$1');
-    $routes->post('admin/dpd/proses_edit/(:num)', 'admin\DPD::proses_edit/$1');
-    $routes->get('admin/dpd/delete/(:any)', 'admin\DPD::delete/$1');
-    
-    $routes->get('admin/dpc/index', 'admin\DPC::index');
-    $routes->get('admin/dpc/tambah', 'admin\DPC::tambah');
-    $routes->post('admin/dpc/proses_tambah', 'admin\DPC::proses_tambah');
-    $routes->get('admin/dpc/edit/(:num)', 'admin\DPC::edit/$1');
-    $routes->post('admin/dpc/proses_edit/(:num)', 'admin\DPC::proses_edit/$1');
-    $routes->get('admin/dpc/delete/(:any)', 'admin\DPC::delete/$1');
+$routes->get('admin/user/index', 'admin\User::index');
+$routes->get('admin/user/tambah', 'admin\User::tambah');
+$routes->post('admin/user/proses_tambah', 'admin\User::proses_tambah');
+$routes->get('/admin/user/edit/(:num)', 'admin\User::edit/$1');
+$routes->post('admin/user/proses_edit/(:num)', 'admin\User::proses_edit/$1');
+$routes->get('admin/user/delete/(:any)', 'admin\User::delete/$1');
 
-    $routes->get('admin/artikel/index', 'admin\Artikel::index');
-    $routes->get('admin/artikel/detail/(:num)/(:any)', 'admin\Artikel::viewArtikel/$1/$2');
-    $routes->get('admin/artikel/tambah', 'admin\Artikel::tambah');
-    $routes->post('admin/artikel/proses_tambah', 'admin\Artikel::proses_tambah');
-    $routes->get('/admin/artikel/edit/(:num)', 'admin\Artikel::edit/$1');
-    $routes->post('admin/artikel/proses_edit/(:num)', 'admin\Artikel::proses_edit/$1');
-    $routes->get('admin/artikel/delete/(:any)', 'admin\Artikel::delete/$1');
-    
-    // Member
-    $routes->get('admin/member/index', 'admin\Member::index');
-    $routes->get('admin/member/detail/(:num)/(:any)', 'admin\Member::viewMember/$1/$2');
-    $routes->get('admin/member/tambah', 'admin\Member::tambah');
-    $routes->post('admin/member/proses_tambah', 'admin\Member::proses_tambah');
-    $routes->get('/admin/member/edit/(:num)', 'admin\Member::edit/$1');
-    $routes->post('admin/member/proses_edit/(:num)', 'admin\Member::proses_edit/$1');
-    $routes->get('admin/member/delete/(:any)', 'admin\Member::delete/$1');
-    // Akhir Member
+$routes->get('admin/founder/index', 'admin\Founder::index');
+$routes->get('admin/founder/tambah', 'admin\Founder::tambah');
+$routes->post('admin/founder/proses_tambah', 'admin\Founder::proses_tambah');
+$routes->get('admin/founder/edit/(:num)', 'admin\Founder::edit/$1');
+$routes->post('admin/founder/proses_edit/(:num)', 'admin\Founder::proses_edit/$1');
+$routes->get('admin/founder/delete/(:any)', 'admin\Founder::delete/$1');
 
-    // Kategori Video
-    $routes->get('admin/kategori_videos/index', 'admin\KategoriVideo::index');
-    $routes->get('admin/kategori_videos/tambah', 'admin\KategoriVideo::tambah');
-    $routes->post('admin/kategori_videos/proses_tambah', 'admin\KategoriVideo::proses_tambah');
-    $routes->get('admin/kategori_videos/edit/(:num)', 'admin\KategoriVideo::edit/$1');
-    $routes->post('admin/kategori_videos/proses_edit/(:num)', 'admin\KategoriVideo::proses_edit/$1');
-    $routes->get('admin/kategori_videos/delete/(:any)', 'admin\KategoriVideo::delete/$1');
+$routes->get('admin/link_founder/index', 'admin\LinkFounder::index');
+$routes->get('admin/link_founder/tambah', 'admin\LinkFounder::tambah');
+$routes->post('admin/link_founder/proses_tambah', 'admin\LinkFounder::proses_tambah');
+$routes->get('admin/link_founder/edit/(:num)', 'admin\LinkFounder::edit/$1');
+$routes->post('admin/link_founder/proses_edit/(:num)', 'admin\LinkFounder::proses_edit/$1');
+$routes->get('admin/link_founder/delete/(:any)', 'admin\LinkFounder::delete/$1');
 
-    // Video
-    $routes->get('admin/video_pembelajaran/index', 'admin\Video::index');
-    $routes->get('admin/video_pembelajaran/tambah', 'admin\Video::tambah');
-    $routes->post('admin/video_pembelajaran/proses_tambah', 'admin\Video::proses_tambah');
-    $routes->get('admin/video_pembelajaran/edit/(:num)', 'admin\Video::edit/$1');
-    $routes->post('admin/video_pembelajaran/proses_edit/(:num)', 'admin\Video::proses_edit/$1');
-    $routes->get('admin/video_pembelajaran/delete/(:any)', 'admin\Video::delete/$1');
-
-
-    // Pengumuman
-    $routes->get('admin/pengumuman/index', 'admin\Pengumuman::index');
-    $routes->get('admin/pengumuman/tambah', 'admin\Pengumuman::tambah');
-    $routes->post('admin/pengumuman/proses_tambah', 'admin\Pengumuman::proses_tambah');
-    $routes->get('/admin/pengumuman/edit/(:num)', 'admin\Pengumuman::edit/$1');
-    $routes->post('admin/pengumuman/proses_edit/(:num)', 'admin\Pengumuman::proses_edit/$1');
-    $routes->get('admin/pengumuman/delete/(:any)', 'admin\Pengumuman::delete/$1');
-    // Akhir Pengumuman
-
-    $routes->get('admin/user/index', 'admin\User::index');
-    $routes->get('admin/user/tambah', 'admin\User::tambah');
-    $routes->post('admin/user/proses_tambah', 'admin\User::proses_tambah');
-    $routes->get('/admin/user/edit/(:num)', 'admin\User::edit/$1');
-    $routes->post('admin/user/proses_edit/(:num)', 'admin\User::proses_edit/$1');
-    $routes->get('admin/user/delete/(:any)', 'admin\User::delete/$1');  
-    
-    $routes->get('admin/founder/index', 'admin\Founder::index');
-    $routes->get('admin/founder/tambah', 'admin\Founder::tambah');
-    $routes->post('admin/founder/proses_tambah', 'admin\Founder::proses_tambah');
-    $routes->get('admin/founder/edit/(:num)', 'admin\Founder::edit/$1');
-    $routes->post('admin/founder/proses_edit/(:num)', 'admin\Founder::proses_edit/$1');
-    $routes->get('admin/founder/delete/(:any)', 'admin\Founder::delete/$1');
-
-    $routes->get('admin/link_founder/index', 'admin\LinkFounder::index');
-    $routes->get('admin/link_founder/tambah', 'admin\LinkFounder::tambah');
-    $routes->post('admin/link_founder/proses_tambah', 'admin\LinkFounder::proses_tambah');
-    $routes->get('admin/link_founder/edit/(:num)', 'admin\LinkFounder::edit/$1');
-    $routes->post('admin/link_founder/proses_edit/(:num)', 'admin\LinkFounder::proses_edit/$1');
-    $routes->get('admin/link_founder/delete/(:any)', 'admin\LinkFounder::delete/$1');
-
-    $routes->group('admin', function($routes) {
-        $routes->get('kontak', 'admin\Kontak::index');
-        $routes->get('kontak/tambah', 'admin\Kontak::tambah');
-        $routes->post('kontak/proses_tambah', 'admin\Kontak::proses_tambah');
-        $routes->get('kontak/edit/(:num)', 'admin\Kontak::edit/$1');
-        $routes->post('kontak/proses_edit/(:num)', 'admin\Kontak::proses_edit/$1');
-        $routes->get('kontak/delete/(:num)', 'admin\Kontak::delete/$1');
-    });
+$routes->group('admin', function ($routes) {
+    $routes->get('kontak', 'admin\Kontak::index');
+    $routes->get('kontak/tambah', 'admin\Kontak::tambah');
+    $routes->post('kontak/proses_tambah', 'admin\Kontak::proses_tambah');
+    $routes->get('kontak/edit/(:num)', 'admin\Kontak::edit/$1');
+    $routes->post('kontak/proses_edit/(:num)', 'admin\Kontak::proses_edit/$1');
+    $routes->get('kontak/delete/(:num)', 'admin\Kontak::delete/$1');
+});
 // });
 
 

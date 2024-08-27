@@ -5,8 +5,8 @@
         <div class="app-branding">
             <a class="app-logo" href="<?= base_url('/') ?>"></a>
             <h1 class="m-0 display-6 text-uppercase text-primary1 font-weight-bold" style="font-size: 30px;">
-    Jago<span class="text-white font-weight-normal">-Admin</span>
-</h1>
+                Jago<span class="text-white font-weight-normal">-Admin</span>
+            </h1>
             </a>
         </div><!--//app-branding-->
 
@@ -38,20 +38,20 @@
                 </li>
 
                 <!-- <li class="nav-item"> -->
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <!-- <a class="nav-link <?= (current_url() == base_url('admin/dpd/index')) ? 'active' : '' ?>" href="<?= base_url('admin/dpd/index') ?>"> -->
-                        <!-- <span class="nav-icon"> -->
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16"> -->
-                                <!-- <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" /> -->
-                            <!-- </svg> -->
-                        <!-- </span> -->
-                        <!-- <span class="nav-link-text">DPD</span> -->
-                    <!-- </a>
+                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                <!-- <a class="nav-link <?= (current_url() == base_url('admin/dpd/index')) ? 'active' : '' ?>" href="<?= base_url('admin/dpd/index') ?>"> -->
+                <!-- <span class="nav-icon"> -->
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16"> -->
+                <!-- <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" /> -->
+                <!-- </svg> -->
+                <!-- </span> -->
+                <!-- <span class="nav-link-text">DPD</span> -->
+                <!-- </a>
                 </li> -->
-                
+
                 <!-- <li class="nav-item"> -->
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <!-- <a class="nav-link <?= (current_url() == base_url('admin/dpc/index')) ? 'active' : '' ?>" href="<?= base_url('admin/dpc/index') ?>">
+                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                <!-- <a class="nav-link <?= (current_url() == base_url('admin/dpc/index')) ? 'active' : '' ?>" href="<?= base_url('admin/dpc/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
                                 <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
@@ -75,40 +75,40 @@
                 </li><!--//nav-item-->
 
                 <li class="nav-item">
-    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-    <a class="nav-link <?= (current_url() == base_url('admin/kategori_videos/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kategori_videos/index') ?>">
-        <span class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
-                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z"/>
-            </svg>
-        </span>
-        <span class="nav-link-text">Kategori Video</span>
-    </a><!--//nav-link-->
-</li><!--//nav-item-->             
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/kategori_videos/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kategori_videos/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
+                                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Kategori Video</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
 
-<li class="nav-item">
-    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-    <a class="nav-link <?= (current_url() == base_url('admin/video_pembelajaran/index')) ? 'active' : '' ?>" href="<?= base_url('admin/video_pembelajaran/index') ?>">
-        <span class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-video bi bi-activity" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M0 1a1 1 0 0 0 1 1v12a1 1 0 0 0 1-1H1a1 1 0 0 0-1-1V2zm3 1h6v2H6V3zm6 3H2v2h12V6zm0-3H2V3h12v2zm-6 3H2v2h12V9zm0-3H2V6h12v2z"/>
-            </svg>
-        </span>
-        <span class="nav-link-text">Video Pembelajaran</span>
-    </a><!--//nav-link-->
-</li><!--//nav-item-->
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/video_pembelajaran/index')) ? 'active' : '' ?>" href="<?= base_url('admin/video_pembelajaran/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-video bi bi-activity" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M0 1a1 1 0 0 0 1 1v12a1 1 0 0 0 1-1H1a1 1 0 0 0-1-1V2zm3 1h6v2H6V3zm6 3H2v2h12V6zm0-3H2V3h12v2zm-6 3H2v2h12V9zm0-3H2V6h12v2z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Video Pembelajaran</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
 
-<li class="nav-item">
-    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-    <a class="nav-link <?= (current_url() == base_url('admin/Keuntungan/index')) ? 'active' : '' ?>" href="<?= base_url('admin/Keuntungan/index') ?>">
-        <span class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
-                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z"/>
-            </svg>
-        </span>
-        <span class="nav-link-text">Keuntungan</span>
-    </a><!--//nav-link-->
-</li><!--//nav-item-->
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/Keuntungan/index')) ? 'active' : '' ?>" href="<?= base_url('admin/Keuntungan/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
+                                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Keuntungan</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
 
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -123,17 +123,17 @@
                 </li><!--//nav-item-->
 
                 <li class="nav-item">
-    <a class="nav-link <?= (current_url() == base_url('admin/kontak/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kontak/index') ?>">
-        <span class="nav-icon">
-            <svg width="16" height="16" fill="currentColor" class="fas fa-address-book bi bi-activity" viewBox="0 0 16 16">
-                <path d="M3.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h3zM4 1h-2v14h2V1zm8 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 9 0h3zM10 1h-2v14h2V1z"/>
-            </svg>
-        </span>
-        <span class="nav-link-text">Kontak</span>
-    </a><!--//nav-link-->
-</li><!--//nav-item-->
+                    <a class="nav-link <?= (current_url() == base_url('admin/kontak/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kontak/index') ?>">
+                        <span class="nav-icon">
+                            <svg width="16" height="16" fill="currentColor" class="fas fa-address-book bi bi-activity" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h3zM4 1h-2v14h2V1zm8 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 9 0h3zM10 1h-2v14h2V1z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Kontak</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
 
-<li class="nav-item">
+                <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link <?= (current_url() == base_url('admin/founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/founder/index') ?>">
                         <span class="nav-icon">
@@ -168,10 +168,17 @@
                         <span class="nav-link-text">Tentang Kami</span>
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
-
-
-
-
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/artikel/index')) ? 'active' : '' ?>" href="<?= base_url('admin/artikel/index') ?>">
+                        <span class="nav-icon">
+                            <svg width="16" height="16" fill="currentColor" class="fas fa-bullhorn bi bi-activity" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Artikel</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
             </ul><!--//app-menu-->
         </nav><!--//app-nav-->
     </div><!--//sidepanel-inner-->
