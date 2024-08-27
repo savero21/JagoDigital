@@ -9,6 +9,7 @@
 
   <title><?= $title ?? 'Jago Digital Marketing' ?></title>
 
+  <link rel="icon" type="image/x-icon" href="<?= base_url('assets-new/images/favicon.png') ?>">
   <link href="<?= base_url('assets-new/css/jdm.css') ?>" rel="stylesheet">
 
 </head>
@@ -137,12 +138,10 @@
       <!-- Grid container -->
 
       <!-- Copyright -->
-      <div
-        class="text-center p-3"
-        style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2023 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">Jago Digital Marketing</a>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: #fff;">
+        &copy; <?= date('Y'); ?> <?= isset($layout['copyright']) ? $layout['copyright'] : 'All Rights Reserved'; ?>
       </div>
+
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
