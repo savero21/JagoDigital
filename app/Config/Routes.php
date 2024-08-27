@@ -51,6 +51,13 @@ $routes->get('logout', 'Login::logout');
     $routes->post('admin/founder/proses_edit/(:num)', 'admin\Founder::proses_edit/$1');
     $routes->get('admin/founder/delete/(:any)', 'admin\Founder::delete/$1');
 
+    $routes->get('admin/link_founder/index', 'admin\LinkFounder::index');
+    $routes->get('admin/link_founder/tambah', 'admin\LinkFounder::tambah');
+    $routes->post('admin/link_founder/proses_tambah', 'admin\LinkFounder::proses_tambah');
+    $routes->get('admin/link_founder/edit/(:num)', 'admin\LinkFounder::edit/$1');
+    $routes->post('admin/link_founder/proses_edit/(:num)', 'admin\LinkFounder::proses_edit/$1');
+    $routes->get('admin/link_founder/delete/(:any)', 'admin\LinkFounder::delete/$1');
+
     $routes->get('admin/kategori/index', 'admin\Kategori::index');
     $routes->get('admin/kategori/tambah', 'admin\Kategori::tambah');
     $routes->post('admin/kategori/proses_tambah', 'admin\Kategori::proses_tambah');
