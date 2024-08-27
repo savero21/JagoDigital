@@ -123,6 +123,16 @@
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
 
+                <li class="nav-item">
+    <a class="nav-link <?= (current_url() == base_url('admin/kontak/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kontak/index') ?>">
+        <span class="nav-icon">
+            <svg width="16" height="16" fill="currentColor" class="fas fa-address-book bi bi-activity" viewBox="0 0 16 16">
+                <path d="M3.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h3zM4 1h-2v14h2V1zm8 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 9 0h3zM10 1h-2v14h2V1z"/>
+            </svg>
+        </span>
+        <span class="nav-link-text">Kontak</span>
+    </a><!--//nav-link-->
+</li><!--//nav-item-->
             </ul><!--//app-menu-->
         </nav><!--//app-nav-->
     </div><!--//sidepanel-inner-->
