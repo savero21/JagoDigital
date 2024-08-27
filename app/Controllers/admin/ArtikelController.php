@@ -104,32 +104,45 @@ class ArtikelController extends BaseController
         $model = new ArtikelModel();
         $artikel = $model->find($id);
 
+        // Inisialisasi array $data untuk menyimpan data yang akan diupdate
+        $data = [];
+
         // Mendapatkan file yang diunggah
         $file = $this->request->getFile('foto_artikel');
 
         // Mengecek apakah ada file yang diunggah
-        if ($file && !$file->hasMoved()) {
-            // Nama file baru
-            $newFileName = $file->getRandomName();
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            // Validasi jenis file
+            $allowedTypes = ['image/jpeg', 'image/png', 'image/gif']; // Daftar tipe file yang diizinkan
+            if (in_array($file->getMimeType(), $allowedTypes)) {
+                // Nama file baru
+                $newFileName = $file->getRandomName();
 
-            // Pindahkan file ke folder uploads
-            $file->move('uploads/upload_artikel/', $newFileName);
+                // Pindahkan file ke folder uploads
+                $file->move('uploads/upload_artikel/', $newFileName);
 
-            // Tambahkan nama file baru ke data yang akan diupdate
-            $data['foto_artikel'] = $newFileName;
+                // Tambahkan nama file baru ke data yang akan diupdate
+                $data['foto_artikel'] = $newFileName;
+            } else {
+                return redirect()->back()->with('error', 'Format file tidak diizinkan.');
+            }
         }
 
-        // Data lain yang diupdate
+        // Mendapatkan data dari input form
         $data['judul_artikel'] = $this->request->getPost('judul_artikel');
         $data['id_kategori'] = $this->request->getPost('id_kategori');
         $data['deskripsi_artikel'] = $this->request->getPost('deskripsi_artikel');
         $data['tags'] = $this->request->getPost('tags');
         $data['slug'] = $this->request->getPost('slug');
 
-        // Update data ke database
-        $model->update($id, $data);
-
-        return redirect()->to('/admin/artikel/index')->with('success', 'Artikel berhasil diperbarui.');
+        // Memastikan data tidak kosong sebelum melakukan update
+        // Jika hanya foto yang diupload, update hanya foto_artikel
+        if (!empty($data['foto_artikel']) || !empty($data['judul_artikel']) || !empty($data['id_kategori']) || !empty($data['deskripsi_artikel']) || !empty($data['tags']) || !empty($data['slug'])) {
+            $model->update($id, $data);
+            return redirect()->to('/admin/artikel/index')->with('success', 'Artikel berhasil diperbarui.');
+        } else {
+            return redirect()->to('/admin/artikel/index')->with('error', 'Tidak ada data yang diubah.');
+        }
     }
 
     public function delete($id_artikel)
