@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/',  'NewUser\BerandaController::index');
 $routes->get('/about', 'NewUser\BerandaController::about');
 
+
 //ADMIN
 $routes->get('login', 'Login::index');
 $routes->post('login/process', 'Login::process');
@@ -43,20 +44,6 @@ $routes->get('logout', 'Login::logout');
 
     $routes->get('admin', 'admin\Dashboardctrl::routetoDashboard');
     $routes->get('admin/dashboard', 'admin\Dashboardctrl::index');
-
-    $routes->get('admin/founder/index', 'admin\Founder::index');
-    $routes->get('admin/founder/tambah', 'admin\Founder::tambah');
-    $routes->post('admin/founder/proses_tambah', 'admin\Founder::proses_tambah');
-    $routes->get('admin/founder/edit/(:num)', 'admin\Founder::edit/$1');
-    $routes->post('admin/founder/proses_edit/(:num)', 'admin\Founder::proses_edit/$1');
-    $routes->get('admin/founder/delete/(:any)', 'admin\Founder::delete/$1');
-
-    $routes->get('admin/link_founder/index', 'admin\LinkFounder::index');
-    $routes->get('admin/link_founder/tambah', 'admin\LinkFounder::tambah');
-    $routes->post('admin/link_founder/proses_tambah', 'admin\LinkFounder::proses_tambah');
-    $routes->get('admin/link_founder/edit/(:num)', 'admin\LinkFounder::edit/$1');
-    $routes->post('admin/link_founder/proses_edit/(:num)', 'admin\LinkFounder::proses_edit/$1');
-    $routes->get('admin/link_founder/delete/(:any)', 'admin\LinkFounder::delete/$1');
 
     $routes->get('admin/kategori/index', 'admin\Kategori::index');
     $routes->get('admin/kategori/tambah', 'admin\Kategori::tambah');
@@ -128,8 +115,30 @@ $routes->get('logout', 'Login::logout');
     $routes->post('admin/user/proses_tambah', 'admin\User::proses_tambah');
     $routes->get('/admin/user/edit/(:num)', 'admin\User::edit/$1');
     $routes->post('admin/user/proses_edit/(:num)', 'admin\User::proses_edit/$1');
-    $routes->get('admin/user/delete/(:any)', 'admin\User::delete/$1');   
+    $routes->get('admin/user/delete/(:any)', 'admin\User::delete/$1');  
+    
+    $routes->get('admin/founder/index', 'admin\Founder::index');
+    $routes->get('admin/founder/tambah', 'admin\Founder::tambah');
+    $routes->post('admin/founder/proses_tambah', 'admin\Founder::proses_tambah');
+    $routes->get('admin/founder/edit/(:num)', 'admin\Founder::edit/$1');
+    $routes->post('admin/founder/proses_edit/(:num)', 'admin\Founder::proses_edit/$1');
+    $routes->get('admin/founder/delete/(:any)', 'admin\Founder::delete/$1');
 
+    $routes->get('admin/link_founder/index', 'admin\LinkFounder::index');
+    $routes->get('admin/link_founder/tambah', 'admin\LinkFounder::tambah');
+    $routes->post('admin/link_founder/proses_tambah', 'admin\LinkFounder::proses_tambah');
+    $routes->get('admin/link_founder/edit/(:num)', 'admin\LinkFounder::edit/$1');
+    $routes->post('admin/link_founder/proses_edit/(:num)', 'admin\LinkFounder::proses_edit/$1');
+    $routes->get('admin/link_founder/delete/(:any)', 'admin\LinkFounder::delete/$1');
+
+    $routes->group('admin', function($routes) {
+        $routes->get('kontak', 'admin\Kontak::index');
+        $routes->get('kontak/tambah', 'admin\Kontak::tambah');
+        $routes->post('kontak/proses_tambah', 'admin\Kontak::proses_tambah');
+        $routes->get('kontak/edit/(:num)', 'admin\Kontak::edit/$1');
+        $routes->post('kontak/proses_edit/(:num)', 'admin\Kontak::proses_edit/$1');
+        $routes->get('kontak/delete/(:num)', 'admin\Kontak::delete/$1');
+    });
 // });
 
 
@@ -150,6 +159,7 @@ $routes->post('/profil/proses_edit', 'user\Profilctrl::edit');
 $routes->get('/videos', 'user\Videoctrl::index');
 $routes->get('/videos/(:num)', 'user\Videoctrl::categoryDetails/$1');
 $routes->get('/video/detail/(:num)', 'user\Videoctrl::detail/$1');
+
 
 // route language home
 // $routes->get('lang/{locale}', 'user\Homectrl::language');

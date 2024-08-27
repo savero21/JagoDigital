@@ -74,6 +74,103 @@
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
 
+                <li class="nav-item">
+    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+    <a class="nav-link <?= (current_url() == base_url('admin/kategori_videos/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kategori_videos/index') ?>">
+        <span class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
+                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z"/>
+            </svg>
+        </span>
+        <span class="nav-link-text">Kategori Video</span>
+    </a><!--//nav-link-->
+</li><!--//nav-item-->             
+
+<li class="nav-item">
+    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+    <a class="nav-link <?= (current_url() == base_url('admin/video_pembelajaran/index')) ? 'active' : '' ?>" href="<?= base_url('admin/video_pembelajaran/index') ?>">
+        <span class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-video bi bi-activity" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 1a1 1 0 0 0 1 1v12a1 1 0 0 0 1-1H1a1 1 0 0 0-1-1V2zm3 1h6v2H6V3zm6 3H2v2h12V6zm0-3H2V3h12v2zm-6 3H2v2h12V9zm0-3H2V6h12v2z"/>
+            </svg>
+        </span>
+        <span class="nav-link-text">Video Pembelajaran</span>
+    </a><!--//nav-link-->
+</li><!--//nav-item-->
+
+<li class="nav-item">
+    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+    <a class="nav-link <?= (current_url() == base_url('admin/Keuntungan/index')) ? 'active' : '' ?>" href="<?= base_url('admin/Keuntungan/index') ?>">
+        <span class="nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
+                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z"/>
+            </svg>
+        </span>
+        <span class="nav-link-text">Keuntungan</span>
+    </a><!--//nav-link-->
+</li><!--//nav-item-->
+
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/pengumuman/index')) ? 'active' : '' ?>" href="<?= base_url('admin/pengumuman/index') ?>">
+                        <span class="nav-icon">
+                            <svg width="16" height="16" fill="currentColor" class="fas fa-bullhorn bi bi-activity" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Pengumuman</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
+                <li class="nav-item">
+    <a class="nav-link <?= (current_url() == base_url('admin/kontak/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kontak/index') ?>">
+        <span class="nav-icon">
+            <svg width="16" height="16" fill="currentColor" class="fas fa-address-book bi bi-activity" viewBox="0 0 16 16">
+                <path d="M3.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h3zM4 1h-2v14h2V1zm8 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 9 0h3zM10 1h-2v14h2V1z"/>
+            </svg>
+        </span>
+        <span class="nav-link-text">Kontak</span>
+    </a><!--//nav-link-->
+</li><!--//nav-item-->
+
+<li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/founder/index') ?>">
+                        <span class="nav-icon">
+                            <svg width="16" height="16" fill="currentColor" class="fas fa-bullhorn bi bi-activity" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Founder</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/link_founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/link_founder/index') ?>">
+                        <span class="nav-icon">
+                            <svg width="16" height="16" fill="currentColor" class="fas fa-bullhorn bi bi-activity" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Link Founder</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/tentang/index')) ? 'active' : '' ?>" href="<?= base_url('admin/tentang/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Tentang Kami</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
+
+
 
             </ul><!--//app-menu-->
         </nav><!--//app-nav-->
