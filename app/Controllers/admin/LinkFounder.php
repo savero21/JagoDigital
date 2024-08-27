@@ -6,6 +6,7 @@ use App\Models\LinkFounderModels;
 use App\Models\FounderModels;
 use App\Controllers\BaseController;
 
+
 class LinkFounder extends BaseController
 {
     public function index()

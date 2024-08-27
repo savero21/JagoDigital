@@ -4,6 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+
 class LinkFounderModels extends Model
 {
     protected $table = 'tb_link_founder';
