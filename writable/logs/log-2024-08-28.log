@@ -1,0 +1,118 @@
+INFO - 2024-08-28 04:11:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:11:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:13:54 --> Array to string conversion
+in APPPATH\Views\admin\artikel\tambah.php on line 35.
+ 1 APPPATH\Views\admin\artikel\tambah.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/tambah', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(44): view('/admin/artikel/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:16:36 --> Undefined array key "id"
+in APPPATH\Views\admin\artikel\tambah.php on line 40.
+ 1 APPPATH\Views\admin\artikel\tambah.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/tambah', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(44): view('/admin/artikel/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:16:38 --> Undefined array key "id"
+in APPPATH\Views\admin\artikel\tambah.php on line 40.
+ 1 APPPATH\Views\admin\artikel\tambah.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/tambah', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(44): view('/admin/artikel/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:18:24 --> Undefined array key "id"
+in APPPATH\Views\admin\artikel\tambah.php on line 40.
+ 1 APPPATH\Views\admin\artikel\tambah.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/tambah', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(44): view('/admin/artikel/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:19:42 --> CSRF token verified.
+INFO - 2024-08-28 04:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:22:08 --> Undefined array key "id"
+in APPPATH\Views\admin\artikel\edit.php on line 37.
+ 1 APPPATH\Views\admin\artikel\edit.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php', 37)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/edit', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(102): view('/admin/artikel/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->edit('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:22:24 --> Undefined array key "id"
+in APPPATH\Views\admin\artikel\edit.php on line 37.
+ 1 APPPATH\Views\admin\artikel\edit.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php', 37)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/edit', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(102): view('/admin/artikel/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->edit('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:23:10 --> Array to string conversion
+in APPPATH\Views\admin\artikel\edit.php on line 37.
+ 1 APPPATH\Views\admin\artikel\edit.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php', 37)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/edit', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(102): view('/admin/artikel/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->edit('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-08-28 04:27:12 --> Undefined array key "id"
+in APPPATH\Views\admin\artikel\edit.php on line 37.
+ 1 APPPATH\Views\admin\artikel\edit.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php', 37)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\app\\Views\\admin\\artikel\\edit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('/admin/artikel/edit', [], true)
+ 5 APPPATH\Controllers\admin\ArtikelController.php(102): view('/admin/artikel/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Admin\ArtikelController->edit('3')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ArtikelController))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\ANIK SAHILAH\\Semester 7\\Magang\\Coding\\Jago Digital\\2\\JagoDigital\\public\\index.php')
+INFO - 2024-08-28 04:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:28:38 --> CSRF token verified.
+INFO - 2024-08-28 04:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:28:58 --> CSRF token verified.
+INFO - 2024-08-28 04:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-28 04:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

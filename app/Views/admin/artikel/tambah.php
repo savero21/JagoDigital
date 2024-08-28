@@ -5,16 +5,21 @@
     <div class="container-xl">
         <h1 class="app-page-title">Tambahkan Artikel</h1>
         <hr class="mb-4">
+
+        <!-- Menampilkan pesan sukses -->
         <?php if (session()->getFlashdata('success')) : ?>
             <div class="alert alert-success">
                 <?= session()->getFlashdata('success') ?>
             </div>
         <?php endif; ?>
+
+        <!-- Menampilkan pesan error -->
         <?php if (session()->getFlashdata('error')) : ?>
             <div class="alert alert-danger">
                 <?= session()->getFlashdata('error') ?>
             </div>
         <?php endif; ?>
+
         <div class="row g-4 settings-section">
             <div class="col-12 col-md-8">
                 <div class="app-card app-card-settings shadow-sm p-4">
@@ -31,8 +36,8 @@
                                 <label class="form-label">Kategori</label>
                                 <select class="form-control" name="kategori" required>
                                     <option value="" disabled selected>Pilih Kategori</option>
-                                    <?php foreach ($kategori as $id => $nama): ?>
-                                        <option value="<?= $id; ?>"><?= $nama; ?></option>
+                                    <?php foreach ($kategori as $k) : ?>
+                                        <option value="<?= $k['id_kategori']; ?>"><?= $k['nama_kategori']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
