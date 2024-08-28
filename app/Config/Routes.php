@@ -148,8 +148,31 @@ $routes->group('admin', function ($routes) {
 });
 // });
 
+$routes->group('admin', function($routes) {
+    $routes->get('kategori_videos/index', 'admin\KategoriVideo::index');
+    $routes->get('kategori_videos/tambah', 'admin\KategoriVideo::tambah');
+    $routes->post('kategori_videos/proses_tambah', 'admin\KategoriVideo::proses_tambah');
+    $routes->get('kategori_videos/edit/(:num)', 'admin\KategoriVideo::edit/$1');
+    $routes->post('kategori_videos/proses_edit/(:num)', 'admin\KategoriVideo::proses_edit/$1');
+    $routes->get('kategori_videos/delete/(:num)', 'admin\KategoriVideo::delete/$1');
+});
 
+// Admin Social Media Routes
+$routes->get('admin/socialmedia/index', 'admin\Socialmedia::index');
+$routes->get('admin/socialmedia/tambah', 'admin\Socialmedia::tambah');
+$routes->post('admin/socialmedia/proses_tambah', 'admin\Socialmedia::proses_tambah');
+$routes->get('admin/socialmedia/edit/(:num)', 'admin\Socialmedia::edit/$1');
+$routes->post('admin/socialmedia/proses_edit/(:num)', 'admin\Socialmedia::proses_edit/$1');
+$routes->get('admin/socialmedia/delete/(:any)', 'admin\Socialmedia::delete/$1');
 
+$routes->group('admin', ['namespace' => 'App\Controllers\admin'], function($routes) {
+    $routes->get('keuntungan', 'Keuntungan::index');
+    $routes->get('keuntungan/tambah', 'Keuntungan::tambah');
+    $routes->post('keuntungan/proses_tambah', 'Keuntungan::proses_tambah');
+    $routes->get('keuntungan/edit/(:num)', 'Keuntungan::edit/$1');
+    $routes->post('keuntungan/proses_edit/(:num)', 'Keuntungan::proses_edit/$1');
+    $routes->get('keuntungan/delete/(:num)', 'Keuntungan::delete/$1');
+});
 //USER
 // start frond end routes
 $routes->get('/', 'user\Pengumumanctrl::index');

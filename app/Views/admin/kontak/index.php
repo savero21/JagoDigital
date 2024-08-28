@@ -15,6 +15,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Deskripsi</th>
                                     <th>Kontak</th>
                                     <th>Email</th>
@@ -24,8 +25,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($kontaks as $kontak): ?>
+                                <?php foreach ($kontaks as $index => $kontak): ?>
                                 <tr>
+                                    <td><?= $index + 1 ?></td>
                                     <td><?= $kontak['deskripsi'] ?></td>
                                     <td><?= $kontak['kontak'] ?></td>
                                     <td><?= $kontak['email'] ?></td>
