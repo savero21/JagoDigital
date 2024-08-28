@@ -4,14 +4,17 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\ArtikelModel;
+use App\Models\KategoriModel;
 
 class ArtikelController extends BaseController
 {
     protected $artikelModel;
+    protected $kategoriModel;
 
     public function __construct()
     {
         $this->artikelModel = new ArtikelModel();
+        $this->kategoriModel = new KategoriModel();
     }
 
     public function index()
@@ -29,16 +32,15 @@ class ArtikelController extends BaseController
 
     public function create()
     {
-        $kategori = [
-            1 => 'Teknologi',
-            2 => 'Pendidikan',
-            3 => 'Kesehatan',
-            // Tambahkan kategori lain sesuai dengan yang ada di database
-        ];
+        // Mengambil semua data kategori dari model 'KategoriModel'
+        $kategori = $this->kategoriModel->findAll();
 
+        // Menyiapkan data untuk dikirim ke view
         $data = [
             'kategori' => $kategori
         ];
+
+        // Menampilkan view dengan data kategori
         return view('/admin/artikel/tambah', $data);
     }
 
@@ -47,7 +49,7 @@ class ArtikelController extends BaseController
         // Validasi input
         if (!$this->validate([
             'judul_artikel' => 'required',
-            'kategori' => 'required',
+            'kategori' => 'required|integer',
             'foto_artikel' => 'uploaded[foto_artikel]|mime_in[foto_artikel,image/jpg,image/jpeg,image/png]|max_size[foto_artikel,2048]',
             'deskripsi_artikel' => 'required',
             'tags' => 'required',
@@ -61,7 +63,7 @@ class ArtikelController extends BaseController
         $fotoArtikelName = $fotoArtikel->getRandomName();
         $fotoArtikel->move('uploads/upload_artikel', $fotoArtikelName);
 
-        // Insert data
+        // Insert data artikel
         $this->artikelModel->save([
             'id_kategori' => $this->request->getVar('kategori'),
             'judul_artikel' => $this->request->getVar('judul_artikel'),
@@ -73,29 +75,30 @@ class ArtikelController extends BaseController
             'created_at' => date('Y-m-d H:i:s')
         ]);
 
+        // Redirect dengan pesan sukses
         return redirect()->to(base_url('admin/artikel/index'))->with('success', 'Artikel berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
+        // Mengambil artikel berdasarkan ID
         $artikel = $this->artikelModel->find($id);
 
+        // Jika artikel tidak ditemukan, kembalikan dengan pesan error
         if (!$artikel) {
-            return redirect()->to('/admin/artikel/edit')->with('error', 'Artikel tidak ditemukan.');
+            return redirect()->to('/admin/artikel/index')->with('error', 'Artikel tidak ditemukan.');
         }
 
-        // Daftar kategori yang dapat dipilih
-        $kategori = [
-            1 => 'Teknologi',
-            2 => 'Pendidikan',
-            3 => 'Kesehatan'
-        ];
+        // Mengambil semua data kategori dari tabel 'kategori'
+        $kategori = $this->kategoriModel->findAll();
 
+        // Menyiapkan data untuk dikirim ke view
         $data = [
             'artikel' => $artikel,
             'kategori' => $kategori
         ];
 
+        // Menampilkan view dengan data artikel dan kategori
         return view('/admin/artikel/edit', $data);
     }
 
@@ -151,14 +154,20 @@ class ArtikelController extends BaseController
         $artikel = $this->artikelModel->find($id_artikel);
 
         if ($artikel) {
-            // Hapus file gambar
+            // Hapus file gambar jika ada
             $pathToFile = 'uploads/upload_artikel/' . $artikel['foto_artikel'];
-            if (file_exists($pathToFile)) {
-                unlink($pathToFile);
+            if (!empty($artikel['foto_artikel']) && file_exists($pathToFile)) {
+                if (!unlink($pathToFile)) {
+                    // Jika file tidak bisa dihapus, mungkin ingin menambahkan log atau penanganan kesalahan.
+                    return redirect()->to(base_url('admin/artikel/index'))->with('error', 'Gagal menghapus file gambar.');
+                }
             }
 
-            // Hapus data dari database
-            $this->artikelModel->delete($id_artikel);
+            // Hapus data artikel dari database
+            if (!$this->artikelModel->delete($id_artikel)) {
+                // Jika penghapusan data dari database gagal
+                return redirect()->to(base_url('admin/artikel/index'))->with('error', 'Gagal menghapus artikel.');
+            }
 
             return redirect()->to(base_url('admin/artikel/index'))->with('success', 'Artikel berhasil dihapus.');
         } else {
