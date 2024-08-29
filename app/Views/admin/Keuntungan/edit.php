@@ -19,9 +19,12 @@
                                 <textarea class="form-control" name="deskripsi_keuntungan" required><?= $keuntungan['deskripsi_keuntungan'] ?></textarea>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Icon</label>
-                                <input type="text" class="form-control" name="icon_keuntungan" value="<?= $keuntungan['icon_keuntungan'] ?>">
-                            </div>
+    <label class="form-label">Icon</label>
+    <input type="file" class="form-control" name="icon_keuntungan">
+    <?php if ($keuntungan['icon_keuntungan']): ?>
+        <img src="<?= base_url('uploads/icons/' . $keuntungan['icon_keuntungan']) ?>" alt="Icon" class="img-thumbnail mt-2" style="max-width: 100px;">
+    <?php endif; ?>
+</div>
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="<?= base_url('admin/keuntungan/index') ?>" class="btn btn-secondary">Kembali</a>
                         </form>

@@ -19,9 +19,9 @@
                                 <textarea class="form-control" name="deskripsi_keuntungan" required></textarea>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Icon</label>
-                                <input type="text" class="form-control" name="icon_keuntungan">
-                            </div>
+    <label class="form-label">Icon</label>
+    <input type="file" class="form-control" name="icon_keuntungan" required>
+</div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="<?= base_url('admin/keuntungan/index') ?>" class="btn btn-secondary">Kembali</a>
                         </form>
