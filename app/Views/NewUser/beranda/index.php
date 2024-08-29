@@ -70,7 +70,7 @@
             <div class="col-md-6 mt-5 d-flex flex-column align-items-center">
                 <?php foreach ($keuntungan as $item): ?>
                     <div class="card-custom">
-                        <img src="<?= base_url('uploads/icon/' . $item['icon_keuntungan']) ?>" alt="<?= $item['judul_keuntungan'] ?>" class="profile-img">
+                        <img src="<?= base_url('uploads/icons/' . $item['icon_keuntungan']) ?>" alt="<?= $item['judul_keuntungan'] ?>" class="profile-img">
                         <div class="card-body">
                             <h5 class="card-title"><?= $item['judul_keuntungan'] ?></h5>
                             <p class="card-text"><?= $item['deskripsi_keuntungan'] ?></p>
