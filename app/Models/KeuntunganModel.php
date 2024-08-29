@@ -20,4 +20,9 @@ class KeuntunganModel extends Model
         }
         return $this->save($data);
     }
+
+    public function getAllKeuntungan()
+    {
+        return $this->findAll();
+    }
 }
