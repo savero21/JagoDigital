@@ -27,11 +27,24 @@ class Keuntungan extends BaseController
 
     public function proses_tambah()
     {
+        $this->validate([
+            'judul_keuntungan' => 'required',
+            'deskripsi_keuntungan' => 'required',
+            'icon_keuntungan' => 'uploaded[icon_keuntungan]|is_image[icon_keuntungan]|mime_in[icon_keuntungan,image/jpg,image/jpeg,image/png]'
+        ]);
+
         $data = [
-            'judul_keuntungan' => $this->request->getVar('judul_keuntungan'),
-            'deskripsi_keuntungan' => $this->request->getVar('deskripsi_keuntungan'),
-            'icon_keuntungan' => $this->request->getVar('icon_keuntungan'),
+            'judul_keuntungan' => $this->request->getPost('judul_keuntungan'),
+            'deskripsi_keuntungan' => $this->request->getPost('deskripsi_keuntungan'),
         ];
+
+        // Handle file upload
+        $iconKeuntungan = $this->request->getFile('icon_keuntungan');
+        if ($iconKeuntungan->isValid() && !$iconKeuntungan->hasMoved()) {
+            $iconName = $iconKeuntungan->getRandomName();
+            $iconKeuntungan->move('uploads/icons/', $iconName);
+            $data['icon_keuntungan'] = $iconName;
+        }
 
         $this->keuntunganModel->save($data);
         session()->setFlashdata('success', 'Data berhasil disimpan');
@@ -46,11 +59,24 @@ class Keuntungan extends BaseController
 
     public function proses_edit($id_keuntungan)
     {
+        $this->validate([
+            'judul_keuntungan' => 'required',
+            'deskripsi_keuntungan' => 'required',
+            'icon_keuntungan' => 'is_image[icon_keuntungan]|mime_in[icon_keuntungan,image/jpg,image/jpeg,image/png]'
+        ]);
+
         $data = [
-            'judul_keuntungan' => $this->request->getVar('judul_keuntungan'),
-            'deskripsi_keuntungan' => $this->request->getVar('deskripsi_keuntungan'),
-            'icon_keuntungan' => $this->request->getVar('icon_keuntungan'),
+            'judul_keuntungan' => $this->request->getPost('judul_keuntungan'),
+            'deskripsi_keuntungan' => $this->request->getPost('deskripsi_keuntungan'),
         ];
+
+        // Handle file upload
+        $iconKeuntungan = $this->request->getFile('icon_keuntungan');
+        if ($iconKeuntungan->isValid() && !$iconKeuntungan->hasMoved()) {
+            $iconName = $iconKeuntungan->getRandomName();
+            $iconKeuntungan->move('uploads/icons/', $iconName);
+            $data['icon_keuntungan'] = $iconName;
+        }
 
         $this->keuntunganModel->update($id_keuntungan, $data);
         session()->setFlashdata('success', 'Data berhasil diperbarui');
