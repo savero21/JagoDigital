@@ -103,7 +103,7 @@
                     <a class="nav-link <?= (current_url() == base_url('admin/Keuntungan/index')) ? 'active' : '' ?>" href="<?= base_url('admin/Keuntungan/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
-                                <path d="M8 0a1 1 0 0 1 1 1v1h-2V1a1 1 0 0 1 1-1zm4 1a1 1 0 0 1 1 1v1h-2V2a1 1 0 0 1 1-1zm-8 0a1 1 0 0 1 1 1v1H2V2a1 1 0 0 1 1-1zm0 4a1 1 0 0 1 1 1v1H2V6a1 1 0 0 1 1-1zm8 0a1 1 0 0 1 1 1v1h-2V6a1 1 0 0 1 1-1zm-4 0a1 1 0 0 1 1 1v1H6V6a1 1 0 0 1 1-1zm-4 4a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm8 0a1 1 0 0 1 1 1v1h-2v-1a1 1 0 0 1 1-1zm-4 0a1 1 0 0 1 1 1v1H6v-1a1 1 0 0 1 1-1z"/>
+                                <path d="M8 0a1 1 0 0 1 1 1v1h-2V1a1 1 0 0 1 1-1zm4 1a1 1 0 0 1 1 1v1h-2V2a1 1 0 0 1 1-1zm-8 0a1 1 0 0 1 1 1v1H2V2a1 1 0 0 1 1-1zm0 4a1 1 0 0 1 1 1v1H2V6a1 1 0 0 1 1-1zm8 0a1 1 0 0 1 1 1v1h-2V6a1 1 0 0 1 1-1zm-4 0a1 1 0 0 1 1 1v1H6V6a1 1 0 0 1 1-1zm-4 4a1 1 0 0 1 1 1v1H2v-1a1 1 0 0 1 1-1zm8 0a1 1 0 0 1 1 1v1h-2v-1a1 1 0 0 1 1-1zm-4 0a1 1 0 0 1 1 1v1H6v-1a1 1 0 0 1 1-1z" />
                             </svg>
                         </span>
                         <span class="nav-link-text">Keuntungan</span>
@@ -133,13 +133,13 @@
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
 
-                                <li class="nav-item">
+                <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                     <a class="nav-link <?= (current_url() == base_url('admin/founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/founder/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                                <path d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-                                <path fill-rule="evenodd" d="M0 14s1-3 7-3 7 3 7 3V1H0v13z"/>
+                                <path d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                                <path fill-rule="evenodd" d="M0 14s1-3 7-3 7 3 7 3V1H0v13z" />
                             </svg>
                         </span>
                         <span class="nav-link-text">Founder</span>
@@ -151,7 +151,7 @@
                     <a class="nav-link <?= (current_url() == base_url('admin/link_founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/link_founder/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
-                                <path d="M6.354 0a2 2 0 0 1 1.414.586l1.5 1.5a2 2 0 0 1 0 2.828l-1.5 1.5a2 2 0 0 1-2.828 0l-1.5-1.5A2 2 0 0 1 0 4.828l1.5-1.5A2 2 0 0 1 2.828 0h3.526zM4.828 2.828a1 1 0 0 0 0 1.414l1.5 1.5a1 1 0 0 0 1.414 0l1.5-1.5a1 1 0 0 0 0-1.414l-1.5-1.5a1 1 0 0 0-1.414 0l-1.5 1.5zM16 11.172a2 2 0 0 1-1.414.586H10.586a2 2 0 0 1-1.414-.586l-1.5-1.5a2 2 0 0 1 0-2.828l1.5-1.5a2 2 0 0 1 2.828 0l1.5 1.5A2 2 0 0 1 16 11.172zM10.586 12a1 1 0 0 0 0-1.414l-1.5-1.5a1 1 0 0 0-1.414 0l-1.5 1.5a1 1 0 0 0 0 1.414l1.5 1.5a1 1 0 0 0 1.414 0l1.5-1.5z"/>
+                                <path d="M6.354 0a2 2 0 0 1 1.414.586l1.5 1.5a2 2 0 0 1 0 2.828l-1.5 1.5a2 2 0 0 1-2.828 0l-1.5-1.5A2 2 0 0 1 0 4.828l1.5-1.5A2 2 0 0 1 2.828 0h3.526zM4.828 2.828a1 1 0 0 0 0 1.414l1.5 1.5a1 1 0 0 0 1.414 0l1.5-1.5a1 1 0 0 0 0-1.414l-1.5-1.5a1 1 0 0 0-1.414 0l-1.5 1.5zM16 11.172a2 2 0 0 1-1.414.586H10.586a2 2 0 0 1-1.414-.586l-1.5-1.5a2 2 0 0 1 0-2.828l1.5-1.5a2 2 0 0 1 2.828 0l1.5 1.5A2 2 0 0 1 16 11.172zM10.586 12a1 1 0 0 0 0-1.414l-1.5-1.5a1 1 0 0 0-1.414 0l-1.5 1.5a1 1 0 0 0 0 1.414l1.5 1.5a1 1 0 0 0 1.414 0l1.5-1.5z" />
                             </svg>
                         </span>
                         <span class="nav-link-text">Link Founder</span>
@@ -181,10 +181,33 @@
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
                 <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/berita/index')) ? 'active' : '' ?>" href="<?= base_url('admin/berita/index') ?>">
+                        <span class="nav-icon">
+                            <svg width="16" height="16" fill="currentColor" class="fas fa-newspaper bi bi-activity" viewBox="0 0 16 16" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Berita</span>
+                    </a><!--//nav-link-->
+                </li>
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/socialmedia/index')) ? 'active' : '' ?>" href="<?= base_url('admin/socialmedia/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fas fa-folder bi bi-activity" viewBox="0 0 16 16">
+                                <path d="M.5 3.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0-1zm2-2h3.5a.5.5 0 0 0 0 1H3a.5.5 0 1 0 0-1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1zm0 7a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1H3a.5.5 0 0 0 0 1z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Social Media</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
+                <li class="nav-item">
                     <a class="nav-link <?= (current_url() == base_url('admin/kategori/index')) ? 'active' : '' ?>" href="<?= base_url('admin/kategori/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
-                                <path d="M9.828 1.5A.5.5 0 0 1 10.5 2h3a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .354.146l1.414 1.414a.5.5 0 0 0 .354.146h2.5z"/>
+                                <path d="M9.828 1.5A.5.5 0 0 1 10.5 2h3a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .354.146l1.414 1.414a.5.5 0 0 0 .354.146h2.5z" />
                             </svg>
                         </span>
                         <span class="nav-link-text">Kategori Artikel</span>

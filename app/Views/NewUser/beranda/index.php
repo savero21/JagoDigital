@@ -68,27 +68,15 @@
                 </div>
             </div>
             <div class="col-md-6 mt-5 d-flex flex-column align-items-center">
-                <div class="card-custom"> <!-- Repeat this block for each card -->
-                    <img src="<?= base_url('assets-new/images/bg1.jpg') ?>" alt="Image" class="profile-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Kartu 1</h5>
-                        <p class="card-text">Ini adalah teks dalam kartu.</p>
+                <?php foreach ($keuntungan as $item): ?>
+                    <div class="card-custom">
+                        <img src="<?= base_url('uploads/icons/' . $item['icon_keuntungan']) ?>" alt="<?= $item['judul_keuntungan'] ?>" class="profile-img">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $item['judul_keuntungan'] ?></h5>
+                            <p class="card-text"><?= $item['deskripsi_keuntungan'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-custom"> <!-- Repeat this block for each card -->
-                    <img src="<?= base_url('assets-new/images/bg1.jpg') ?>" alt="Image" class="profile-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Kartu 2</h5>
-                        <p class="card-text">Ini adalah teks dalam kartu.</p>
-                    </div>
-                </div>
-                <div class="card-custom"> <!-- Repeat this block for each card -->
-                    <img src="<?= base_url('assets-new/images/bg1.jpg') ?>" alt="Image" class="profile-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Kartu 3</h5>
-                        <p class="card-text">Ini adalah teks dalam kartu.</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 </section>
@@ -126,7 +114,7 @@
                                 style="width: 100%; max-width: 100%; height: auto;"
                                 controls
                                 preload="auto"
-                                src="https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview"
+                                src=" https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview"
                                 sandbox="allow-scripts allow-same-origin"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -453,7 +441,6 @@
         color: #121212;
         height: 70%;
         width: 100%;
-        max-width: 350px;
         margin-bottom: 30px;
         background-color: rgba(255, 255, 255, 0.9);
         border-radius: 10px;

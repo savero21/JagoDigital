@@ -65,17 +65,17 @@
 <section class="founder-section">
     <div class="container">
         <h3>Pendiri</h3>
-        <div class="row">
-            <div class="col-6 col-left">
-                <img src="<?= base_url('assets-new/images/founder/founder1.png') ?>" alt="Foto Pendiri" class="founder-image">
+        <?php foreach ($founder as $item): ?>
+            <div class="row">
+                <div class="col-6 col-left">
+                    <img src="<?= base_url('uploads/foto_founder/' . $item['foto_founder']) ?>" alt="Foto <?= $item['nama_founder'] ?>" class="founder-image">
+                </div>
+                <div class="col-6 col-right">
+                    <h2><?= $item['nama_founder'] ?></h2>
+                    <p><?= $item['deskripsi_founder'] ?></p>
+                </div>
             </div>
-            <div class="col-6 col-right">
-                <h2>Fernandes Raymond</h2>
-                <p>
-                    Sukses dengan bisnisnya di bidang IT dengan nama PT. Elecomp Indonesia, ia memiliki pengalaman luas di bidang IT, termasuk sebagai Facilitator PPEI di Kementerian Perdagangan Indonesia, Facilitator Gapura Digital, dan Business Owner NAKAM Foods Indonesia. Dengan berbagai potensi yang dimiliki baik di dunia IT maupun marketing, ia memutuskan untuk mendirikan sebuah pelatihan. Pelatihan ini bertujuan untuk memajukan UMKM yang masih kurang mumpuni dalam menghadapi perkembangan teknologi, dengan mengoptimalkan marketing melalui media yang ada saat ini.
-                </p>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
 <!-- founder section end -->

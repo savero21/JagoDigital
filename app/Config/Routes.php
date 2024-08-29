@@ -35,6 +35,10 @@ $routes->get('/',  'NewUser\BerandaController::index');
 $routes->get('/about', 'NewUser\BerandaController::about');
 $routes->get('/artikel', 'NewUser\BerandaController::artikel');
 $routes->get('/video', 'NewUser\BerandaController::video');
+$routes->get('/video/(:num)', 'NewUser\Videoctrl::categoryDetails/$1');
+$routes->get('/video/detail/(:num)', 'NewUser\Videoctrl::detail/$1');
+
+$routes->get('/kontak', 'NewUser\BerandaController::kontak');
 
 
 //ADMIN
@@ -44,6 +48,15 @@ $routes->get('logout', 'Login::logout');
 
 $routes->get('admin', 'admin\Dashboardctrl::routetoDashboard');
 $routes->get('admin/dashboard', 'admin\Dashboardctrl::index');
+
+// Berita
+$routes->get('admin/berita/index', 'admin\Berita::index');
+$routes->get('admin/berita/tambah', 'admin\Berita::tambah');
+$routes->post('admin/berita/proses_tambah', 'admin\Berita::proses_tambah');
+$routes->get('/admin/berita/edit/(:num)', 'admin\Berita::edit/$1');
+$routes->post('admin/berita/proses_edit/(:num)', 'admin\Berita::proses_edit/$1');
+$routes->get('admin/berita/delete/(:any)', 'admin\Berita::delete/$1');
+
 
 $routes->get('admin/artikel/index', 'admin\ArtikelController::index');
 $routes->get('admin/artikel/tambah', 'admin\ArtikelController::create');

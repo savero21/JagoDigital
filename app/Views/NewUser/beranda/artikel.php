@@ -24,44 +24,20 @@
                 style="background-image: url('assets/images/icons/separator-1.png');"></span>
         </div>
         <div class="row justify-content-center text-center">
-            <!-- Artikel Statis 1 -->
-            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="<?= base_url('assets-new/images/blog/1.jpeg') ?>" class="card-img-top" alt="Artikel 1">
-                    <div class="card-body d-flex flex-column justify-content-center">
-                        <p class="text-muted small"><i class="fas fa-calendar-alt"></i> 15 Aug 2024</p>
-                        <h5 class="card-title font-weight-bold">Judul Artikel 1</h5>
-                        <p class="card-text">Ini adalah potongan konten dari artikel pertama. Konten ini hanya sebagai contoh...</p>
-                        <a href="#" class="btn btn-gold btn-block mt-3">Baca Selengkapnya</a>
+            <!-- Loop melalui artikel dari database -->
+            <?php foreach ($artikel as $item): ?>
+                <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+                    <div class="card shadow-sm border-0 h-100">
+                        <img src="<?= base_url('uploads/upload_artikel/' . $item['foto_artikel']) ?>" class="card-img-top" alt="<?= esc($item['judul_artikel']) ?>">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                            <p class="text-muted small"><i class="fas fa-calendar-alt"></i> <?= date('d M Y', strtotime($item['created_at'])) ?></p>
+                            <h5 class="card-title font-weight-bold"><?= esc($item['judul_artikel']) ?></h5>
+                            <p class="card-text"><?= character_limiter(strip_tags($item['deskripsi_artikel']), 100) ?></p>
+                            <a href="#" class="btn btn-gold btn-block mt-3">Baca Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Artikel Statis 2 -->
-            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="<?= base_url('assets-new/images/blog/2.jpeg') ?>" class="card-img-top" alt="Artikel 2">
-                    <div class="card-body d-flex flex-column justify-content-center">
-                        <p class="text-muted small"><i class="fas fa-calendar-alt"></i> 10 Aug 2024</p>
-                        <h5 class="card-title font-weight-bold">Judul Artikel 2</h5>
-                        <p class="card-text">Ini adalah potongan konten dari artikel kedua. Konten ini hanya sebagai contoh...</p>
-                        <a href="#" class="btn btn-gold btn-block mt-3">Baca Selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Artikel Statis 3 -->
-            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="<?= base_url('assets-new/images/blog/3.jpeg') ?>" class="card-img-top" alt="Artikel 3">
-                    <div class="card-body d-flex flex-column justify-content-center">
-                        <p class="text-muted small"><i class="fas fa-calendar-alt"></i> 05 Aug 2024</p>
-                        <h5 class="card-title font-weight-bold">Judul Artikel 3</h5>
-                        <p class="card-text">Ini adalah potongan konten dari artikel ketiga. Konten ini hanya sebagai contoh...</p>
-                        <a href="#" class="btn btn-gold btn-block mt-3">Baca Selengkapnya</a>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
         <div class="text-center mt-4">
             <a href="/blog" class="view-all-info" style="font-weight: bold">
@@ -71,6 +47,7 @@
     </div>
 </section>
 <!-- {{-- blog-section end --}} -->
+
 
 
 <!-- css for blog-section -->
