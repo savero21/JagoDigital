@@ -9,7 +9,7 @@ $username = $session->get('username'); // Get the logged-in user's name
 
 <nav class="navbar navbar-expand-lg bg-light sticky-top" style="padding: 15px;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="#" style="margin-left: 40px; margin-right: 100px;">
       <img src="<?= base_url('assets-new/images/logo.png') ?>" alt="Logo" style="height: 40px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

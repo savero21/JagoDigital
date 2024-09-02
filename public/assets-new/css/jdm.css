@@ -17,11 +17,11 @@ html, body {
 
 .navbar-nav .nav-link {
   font-weight: 600;
-  color: #933393;
+  color: #000000;
 }
 
 .navbar-nav .nav-link.active {
-  background-color: #933393;
+  background-color: #87D5C8;
   color: #ffffff;
   border-radius: 20px;
   padding: 10px 15px;
@@ -34,7 +34,6 @@ html, body {
 .navbar-nav .nav-link {
   padding: 10px 15px;
 }
-
 
 /* Forms */
 .form-control {

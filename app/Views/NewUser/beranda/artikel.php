@@ -14,7 +14,7 @@
 <!-- {{-- blog-section start --}} -->
 <section class="blog-section">
     <div class="container">
-        <div class="sec-title text-center">
+        <!-- <div class="sec-title text-center">
             <h2>
                 <mark>
                     Blog
@@ -22,7 +22,7 @@
             </h2>
             <span class="separator"
                 style="background-image: url('assets/images/icons/separator-1.png');"></span>
-        </div>
+        </div> -->
         <div class="row justify-content-center text-center">
             <!-- Loop melalui artikel dari database -->
             <?php foreach ($artikel as $item): ?>
@@ -60,7 +60,7 @@
     }
 
     .blog-section .sec-title h2 {
-        color: #933393;
+        color: #87D5C8;
         /* Warna teks judul */
         font-size: 2.5rem;
         margin-bottom: 20px;
@@ -69,7 +69,7 @@
     .blog-section .sec-title mark {
         background-color: transparent;
         /* Menghilangkan background mark */
-        color: #933393;
+        color: #87D5C8;
         /* Warna teks dalam mark */
     }
 
@@ -77,7 +77,7 @@
         display: inline-block;
         height: 4px;
         width: 80px;
-        background-color: #933393;
+        background-color: #87D5C8;
         margin: 10px auto 30px auto;
     }
 
@@ -122,7 +122,7 @@
     }
 
     .view-all-info {
-        color: #933393;
+        color: #87D5C8;
         font-size: 1.1rem;
         text-decoration: none;
     }
@@ -155,18 +155,27 @@
 <!-- artikel css -->
 <style>
     .artikel-section {
-        background-color: #FFF4FF;
-        padding: 100px 0;
+        position: relative;
+        padding: 50px 15px;
+        /* Reduced from 100px to 50px */
+        background: url('<?= base_url('assets-new/images/bg2.jpg') ?>') no-repeat center center;
+        background-size: cover;
+        min-height: 50vh;
+        /* Adjusted from 0vh to 50vh for better height control */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
 
     .artikel-section h2 {
         font-size: 2.5rem;
         font-weight: bold;
-        color: #933393;
+        color: #FFFFFF;
         /* Warna teks dan garis bawah */
         margin-bottom: 10px;
-        border-bottom: 3px solid #933393;
+        border-bottom: 3px solid #FFFFFF;
         /* Warna garis bawah */
         display: inline-block;
         padding-bottom: 5px;
@@ -175,7 +184,7 @@
 
     .artikel-section p {
         font-size: 1.2rem;
-        color: #555;
+        color: #FFFFFF;
     }
 </style>
 

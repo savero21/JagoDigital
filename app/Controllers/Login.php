@@ -57,6 +57,6 @@ class Login extends BaseController
     {
     // Hapus semua data sesi dan arahkan ke halaman login
     session()->destroy();
-    return redirect()->to('http://localhost:8080/login');
+    return redirect()->to(base_url('login'));
     }
 }
