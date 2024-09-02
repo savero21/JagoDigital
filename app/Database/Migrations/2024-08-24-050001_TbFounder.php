@@ -25,6 +25,11 @@ class TbFounder extends Migration
                 'constraint' => '255',
                 'null'       => true,
             ],
+            'jabatan_founder' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'null'       => true,
+            ],
             'deskripsi_founder' => [
                 'type'       => 'TEXT',
                 'null'       => true,
