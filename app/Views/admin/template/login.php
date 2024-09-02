@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CRM</title>
+    <title>Jago Digital Marketing</title>
 
     <!-- Meta -->
     <meta charset="utf-8">

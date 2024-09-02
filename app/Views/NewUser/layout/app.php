@@ -30,7 +30,7 @@
     <!-- Footer -->
     <footer
       class="text-center text-lg-start text-white"
-      style="background-color: #ac2bac">
+      style="background-color: #87D5C8">
       <!-- Grid container -->
       <div class="container p-4 footer-links">
         <!-- Section: Links -->
