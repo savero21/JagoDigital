@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Admin Member Pribadi Indonesia</title>
+    <title>Admin Member Jago Digital Maarketing</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
