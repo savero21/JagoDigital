@@ -4,32 +4,48 @@ namespace App\Controllers\admin;
 
 use App\Controllers\BaseController;
 
-use App\Models\DPCModels;
-use App\Models\DPDModels;
+use App\Models\ProvinsiModels;
+use App\Models\KabkotaModels;
 use App\Models\MemberModels;
 use App\Models\PengumumanModels;
 use App\Models\KategoriVideoModels;
 use App\Models\VideoPembelajaranModels;
 
+use App\Models\KeuntunganModel;
+use App\Models\KontakModels;
+use App\Models\ArtikelModel;
+use App\models\KategoriModel;
+use App\Models\SocialMediaModels;
+
 class Dashboardctrl extends BaseController
 {
-    private $DPCModels;
-    private $DPDModels;
+    private $ProvinsiModels;
+    private $KabkotaModels;
     private $MemberModels;
     private $PengumumanModels;
     private $KategoriVideoModels;
     private $VideoPembelajaranModels;
+    private $KeuntunganModel;
+    private $KontakModels;
+    private $ArtikelModel;
+    private $KategoriModel;
+    private $SocialMediaModels;
+    
 
 
     public function __construct()
     {
-        $this->DPCModels = new DPCModels();
-        $this->DPDModels = new DPDModels();
+        $this->KabkotaModels = new KabkotaModels();
+        $this->ProvinsiModels = new ProvinsiModels();
         $this->MemberModels = new MemberModels();
         $this->PengumumanModels = new PengumumanModels();
         $this->KategoriVideoModels = new KategoriVideoModels();
         $this->VideoPembelajaranModels = new VideoPembelajaranModels();
-
+        $this->KeuntunganModel = new KeuntunganModel();
+        $this->KontakModels = new KontakModels();
+        $this->ArtikelModel = new ArtikelModel();
+        $this->KategoriModel = new KategoriModel();
+        $this->SocialMediaModels = new SocialMediaModels();
     }
     
     public function index()
@@ -48,13 +64,17 @@ class Dashboardctrl extends BaseController
         }
         
         // Mengakses data dari model sesuai kebutuhan
-        $data['totalDPC'] = $this->DPCModels->countAll(); // Count all records in DPCModels
-        $data['totalDPD'] = $this->DPDModels->countAll(); // Count all records in DPDModels
+        $data['totalKabkota'] = $this->KabkotaModels->countAll(); // Count all records in DPCModels
+        $data['totalProvinsi'] = $this->ProvinsiModels->countAll(); // Count all records in DPDModels
         $data['totalMember'] = $this->MemberModels->where('role', 'user')->countAllResults(); // Count members with role 'user' in MemberModels
         $data['totalPengumuman'] = $this->PengumumanModels->countAll(); // Count all records in PengumumanModels
         $data['totalKategoriVideo'] = $this->KategoriVideoModels->countAll(); // Count all records in KategoriVideoModels
         $data['totalVideoPembelajaran'] = $this->VideoPembelajaranModels->countAll(); // Count all records in VideoPembelajaranModels
-
+        $data['totalKeuntungan'] = $this->KeuntunganModel->countAll(); // Count all records in KeuntunganModel
+        $data['totalKontak'] = $this->KontakModels->countAll(); // Count all records in KontakModels
+        $data['totalArtikel'] = $this->ArtikelModel->countAll(); // Count all records in ArtikelModel
+        $data['totalKategori'] = $this->KategoriModel->countAll(); // Count all records in KategoriModels
+        $data['totalSocialMedia'] = $this->SocialMediaModels->countAll(); // Count all records in SocialMediaModels
   
 
         return view('admin/dashboard/index', $data);

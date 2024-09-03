@@ -18,8 +18,8 @@
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">DPD</h4>
-                        <div class="stats-figure"><?= $totalDPD; ?></div>
+                        <h4 class="stats-type mb-1">Member Provinsi</h4>
+                        <div class="stats-figure"><?= $totalProvinsi; ?></div>
                     </div>
                     <a class="app-card-link-mask" href="<?= base_url('admin/dpd/index') ?>"></a>
                 </div>
@@ -28,8 +28,8 @@
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">DPC</h4>
-                        <div class="stats-figure"><?= $totalDPC; ?></div>
+                        <h4 class="stats-type mb-1">Member Kabupaten / Kota</h4>
+                        <div class="stats-figure"><?= $totalKabkota; ?></div>
                     </div>
                     <a class="app-card-link-mask" href="<?= base_url('admin/dpc/index') ?>"></a>
                 </div>
@@ -45,7 +45,6 @@
                 </div>
             </div>
 
-
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
@@ -55,6 +54,7 @@
                     <a class="app-card-link-mask" href="<?= base_url('admin/kategori_videos/index') ?>"></a>
                 </div>
             </div>
+            
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
@@ -66,15 +66,64 @@
             </div>
 
             <div class="col-6 col-lg-3">
-    <div class="app-card app-card-stat shadow-sm h-100">
-        <div class="app-card-body p-3 p-lg-4">
-            <h4 class="stats-type mb-1">Berita</h4>
-            <div class="stats-figure"><?= isset($totalBerita) ? esc($totalBerita) : '0'; ?></div>
-        </div>
-        <a class="app-card-link-mask" href="<?= base_url('admin/berita/index') ?>"></a>
-    </div>
-</div>
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <div class="app-card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Keuntungan</h4>
+                        <div class="stats-figure"><?= $totalKeuntungan; ?></div>
+                    </div>
+                    <a class="app-card-link-mask" href="<?= base_url('admin/keuntungan/index') ?>"></a>
+                </div>
+            </div>
 
+            <div class="col-6 col-lg-3">
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <div class="app-card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Kontak</h4>
+                        <div class="stats-figure"><?= $totalKontak; ?></div>
+                    </div>
+                    <a class="app-card-link-mask" href="<?= base_url('admin/kontak/index') ?>"></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <div class="app-card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Artikel</h4>
+                        <div class="stats-figure"><?= $totalArtikel; ?></div>
+                    </div>
+                    <a class="app-card-link-mask" href="<?= base_url('admin/artikel/index') ?>"></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <div class="app-card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Kategori</h4>
+                        <div class="stats-figure"><?= $totalKategori; ?></div>
+                    </div>
+                    <a class="app-card-link-mask" href="<?= base_url('admin/kategori/index') ?>"></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <div class="app-card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Social Media</h4>
+                        <div class="stats-figure"><?= $totalSocialMedia; ?></div>
+                    </div>
+                    <a class="app-card-link-mask" href="<?= base_url('admin/social_media/index') ?>"></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="app-card app-card-stat shadow-sm h-100">
+                    <div class="app-card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Berita</h4>
+                        <div class="stats-figure"><?= isset($totalBerita) ? esc($totalBerita) : '0'; ?></div>
+                    </div>
+                    <a class="app-card-link-mask" href="<?= base_url('admin/berita/index') ?>"></a>
+                </div>
+            </div>
             
         </div>
     </div><!--//container-fluid-->

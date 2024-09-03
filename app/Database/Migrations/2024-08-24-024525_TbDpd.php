@@ -8,25 +8,24 @@ class CreateTbDpdTable extends Migration
 {
     public function up()
     {
-        // Membuat tabel tb_dpd
+        // Membuat tabel tb_provinsi
         $this->forge->addField([
-            'id_dpd' => [
+            'id_provinsi' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_dpd' => [
+            'nama_provinsi' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255,
                 'null'       => false,
             ],
         ]);
 
-        $this->forge->addKey('id_dpd', true); // Primary key
-        $this->forge->createTable('tb_dpd');  // Membuat tabel
+        $this->forge->addKey('id_provinsi', true); // Primary key // {{ edit_3 }}
+        $this->forge->createTable('tb_provinsi');  // Membuat tabel // {{ edit_4 }}
     }
-
     public function down()
     {
         // Menghapus tabel tb_dpd

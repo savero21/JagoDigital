@@ -35,6 +35,10 @@ $routes->get('/',  'NewUser\BerandaController::index');
 $routes->get('/about', 'NewUser\BerandaController::about');
 $routes->get('/artikel', 'NewUser\BerandaController::artikel');
 $routes->get('/video', 'NewUser\BerandaController::video');
+$routes->get('/video/(:num)', 'NewUser\Videoctrl::categoryDetails/$1');
+$routes->get('/video/detail/(:num)', 'NewUser\Videoctrl::detail/$1');
+
+$routes->get('/kontak', 'NewUser\BerandaController::kontak');
 
 
 //ADMIN
@@ -44,6 +48,15 @@ $routes->get('logout', 'Login::logout');
 
 $routes->get('admin', 'admin\Dashboardctrl::routetoDashboard');
 $routes->get('admin/dashboard', 'admin\Dashboardctrl::index');
+
+// Berita
+$routes->get('admin/berita/index', 'admin\Berita::index');
+$routes->get('admin/berita/tambah', 'admin\Berita::tambah');
+$routes->post('admin/berita/proses_tambah', 'admin\Berita::proses_tambah');
+$routes->get('/admin/berita/edit/(:num)', 'admin\Berita::edit/$1');
+$routes->post('admin/berita/proses_edit/(:num)', 'admin\Berita::proses_edit/$1');
+$routes->get('admin/berita/delete/(:any)', 'admin\Berita::delete/$1');
+
 
 $routes->get('admin/artikel/index', 'admin\ArtikelController::index');
 $routes->get('admin/artikel/tambah', 'admin\ArtikelController::create');
@@ -59,19 +72,23 @@ $routes->get('admin/kategori/edit/(:num)', 'admin\Kategori::edit/$1');
 $routes->post('admin/kategori/proses_edit/(:num)', 'admin\Kategori::proses_edit/$1');
 $routes->get('admin/kategori/delete/(:any)', 'admin\Kategori::delete/$1');
 
-$routes->get('admin/dpd/index', 'admin\DPD::index');
-$routes->get('admin/dpd/tambah', 'admin\DPD::tambah');
-$routes->post('admin/dpd/proses_tambah', 'admin\DPD::proses_tambah');
-$routes->get('admin/dpd/edit/(:num)', 'admin\DPD::edit/$1');
-$routes->post('admin/dpd/proses_edit/(:num)', 'admin\DPD::proses_edit/$1');
-$routes->get('admin/dpd/delete/(:any)', 'admin\DPD::delete/$1');
+$routes->group('admin', function($routes) {
+    // Routes for Provinsi
+    $routes->get('provinsi', 'admin\Provinsi::index');
+    $routes->get('provinsi/tambah', 'admin\Provinsi::tambah');
+    $routes->post('provinsi/proses_tambah', 'admin\Provinsi::proses_tambah');
+    $routes->get('provinsi/edit/(:num)', 'admin\Provinsi::edit/$1');
+    $routes->post('provinsi/proses_edit/(:num)', 'admin\Provinsi::proses_edit/$1');
+    $routes->get('provinsi/delete/(:num)', 'admin\Provinsi::delete/$1');
 
-$routes->get('admin/dpc/index', 'admin\DPC::index');
-$routes->get('admin/dpc/tambah', 'admin\DPC::tambah');
-$routes->post('admin/dpc/proses_tambah', 'admin\DPC::proses_tambah');
-$routes->get('admin/dpc/edit/(:num)', 'admin\DPC::edit/$1');
-$routes->post('admin/dpc/proses_edit/(:num)', 'admin\DPC::proses_edit/$1');
-$routes->get('admin/dpc/delete/(:any)', 'admin\DPC::delete/$1');
+    // Routes for Kabkota
+    $routes->get('kabkota', 'admin\Kabkota::index');
+    $routes->get('kabkota/tambah', 'admin\Kabkota::tambah');
+    $routes->post('kabkota/proses_tambah', 'admin\Kabkota::proses_tambah');
+    $routes->get('kabkota/edit/(:num)', 'admin\Kabkota::edit/$1');
+    $routes->post('kabkota/proses_edit/(:num)', 'admin\Kabkota::proses_edit/$1');
+    $routes->get('kabkota/delete/(:num)', 'admin\Kabkota::delete/$1');
+});
 
 $routes->get('admin/artikel/index', 'admin\Artikel::index');
 $routes->get('admin/artikel/detail/(:num)/(:any)', 'admin\Artikel::viewArtikel/$1/$2');

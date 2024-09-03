@@ -3,19 +3,19 @@
 
 <div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
-        <h1 class="app-page-title">Tambahkan DPD</h1>
+        <h1 class="app-page-title">Tambahkan Member Provinsi</h1>
         <hr class="mb-4">
         <div class="row g-4 settings-section">
             <div class="col-12 col-md-8">
                 <div class="app-card app-card-settings shadow-sm p-4">
                     <div class="card-body">
-                        <form action="<?= base_url('admin/dpd/proses_tambah') ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?= base_url('admin/provinsi/proses_tambah') ?>" method="POST" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
-                                        <label class="form-label">Nama DPD</label>
-                                        <input type="text" class="form-control" id="nama_dpd" name="nama_dpd" value="<?= old('nama_dpd') ?>">
+                                        <label class="form-label">Nama Member Provinsi</label>
+                                        <input type="text" class="form-control" id="nama_provinsi" name="nama_provinsi" value="<?= old('nama_provinsi') ?>">
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                                 <div class="col">
                                     <?php if (!empty(session()->getFlashdata('success'))) : ?>
                                         <div class="alert alert-success" role="alert">
-                                            <?php echo session()->getFlashdata('success') ?>
+                                            <?= session()->getFlashdata('success') ?>
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -34,11 +34,8 @@
                         </form>
                     </div>
                 </div><!--//app-card-->
-
             </div>
         </div><!--//row-->
-
-        <hr class="my-4">
     </div><!--//container-fluid-->
 </div><!--//app-content-->
 

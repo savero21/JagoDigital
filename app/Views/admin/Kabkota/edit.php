@@ -3,33 +3,34 @@
 
 <div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
-        <h1 class="app-page-title">Tambahkan DPC</h1>
+        <h1 class="app-page-title">Edit Member Kabupaten / Kota</h1>
         <hr class="mb-4">
         <div class="row g-4 settings-section">
             <div class="col-12 col-md-8">
                 <div class="app-card app-card-settings shadow-sm p-4">
                     <div class="card-body">
-                        <form action="<?= base_url('admin/dpc/proses_tambah') ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?= base_url('admin/kabkota/proses_edit/' . $kabkotaData->id_kabkota) ?>" method="POST" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
-                                        <!-- Dropdown untuk memilih kategori -->
-                                        <label class="form-label" for="kategori">Nama DPD</label>
-                                        <select class="form-control" id="id_dpd" name="id_dpd">
-                                            <?php foreach ($all_data_DPD as $dpd) : ?>
-                                                <option value="<?= $dpd->id_dpd; ?>"><?= $dpd->nama_dpd; ?></option>
+                                        <label class="form-label" for="id_provinsi">Member Provinsi</label>
+                                        <select class="form-control" id="id_provinsi" name="id_provinsi">
+                                            <?php foreach ($all_data_Provinsi as $provinsi) : ?>
+                                                <option value="<?= $provinsi->id_provinsi; ?>" <?php echo ($provinsi->id_provinsi == $kabkotaData->id_provinsi) ? 'selected' : ''; ?>>
+                                                    <?= $provinsi->nama_provinsi; ?>
+                                                </option>
                                             <?php endforeach; ?>
                                         </select>
-                                        <Small>*Dropdown DPD</Small>
+                                        <small>*Member Provinsi</small>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Nama DPC</label>
-                                        <input type="text" class="form-control" id="nama_dpc" name="nama_dpc" value="<?= old('nama_dpc') ?>">
+                                        <label class="form-label">Nama Member Kabupaten / Kota</label>
+                                        <input type="text" class="form-control" id="nama_kabkota" name="nama_kabkota" value="<?= $kabkotaData->nama_kabkota; ?>">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Wilayah Kerja DPC</label>
-                                        <input type="text" class="form-control" id="wilayah_kerja_dpc" name="wilayah_kerja_dpc" value="<?= old('wilayah_kerja_dpc') ?>">
+                                        <label class="form-label">Wilayah Nama Member Kabupaten / Kota</label>
+                                        <input type="text" class="form-control" id="wilayah_kerja_kabkota" name="wilayah_kerja_kabkota" value="<?= $kabkotaData->wilayah_kerja_kabkota; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +41,7 @@
                                 <div class="col">
                                     <?php if (!empty(session()->getFlashdata('success'))) : ?>
                                         <div class="alert alert-success" role="alert">
-                                            <?php echo session()->getFlashdata('success') ?>
+                                            <?= session()->getFlashdata('success') ?>
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -48,11 +49,8 @@
                         </form>
                     </div>
                 </div><!--//app-card-->
-
             </div>
         </div><!--//row-->
-
-        <hr class="my-4">
     </div><!--//container-fluid-->
 </div><!--//app-content-->
 

@@ -22,11 +22,11 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center" valign="middle">No</th>
-                                        <th class="text-center" valign="middle">Pengumuman</th>
-                                        <th class="text-center" valign="middle">Deskripsi Pengumuman</th>
-                                        <th class="text-center" valign="middle">Mulai Pengumuman</th>
-                                        <th class="text-center" valign="middle">Akhir Pengumuman</th>
-                                        <th class="text-center" valign="middle">Poster Pengumuman</th>
+                                        <th class="text-center" valign="middle">Judul Berita</th>
+                                        <th class="text-center" valign="middle">Deskripsi Berita</th>
+                                        <th class="text-center" valign="middle">Mulai Berita</th>
+                                        <th class="text-center" valign="middle">Akhir Berita</th>
+                                        <th class="text-center" valign="middle">Poster Berita</th>
                                         <th class="text-center" valign="middle">Aksi</th>
                                     </tr>
                                 </thead>
