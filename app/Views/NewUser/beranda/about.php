@@ -23,80 +23,224 @@
 </section>
 <!-- paragraf section end -->
 
-<!-- visi misi section start -->
-<section class="visi-misi-section">
+<section class="perjalanan">
     <div class="container">
-        <div class="row">
-            <div class="col visi">
-                <h3>Visi</h3>
-                <p>
-                    <?= $tentang['visi'] ?>
-                    <!-- Menjadi perusahaan digital marketing terkemuka yang berkomitmen untuk memberikan solusi kreatif dan inovatif bagi pelanggan kami. -->
-                </p>
-            </div>
-            <div class="col misi">
-                <h3>Misi</h3>
-                <p>
-                    <?= $tentang['misi'] ?>
-                    <!-- Memberikan layanan berkualitas tinggi dalam semua aspek digital marketing, mengembangkan strategi yang sesuai dengan kebutuhan unik setiap pelanggan, dan mendorong pertumbuhan bisnis yang berkelanjutan dan berdampak positif. -->
-                </p>
-            </div>
-        </div>
+        <h2 class="section-title">Perjalanan</h2>
+        <p class="perjalanan-description">
+            Jago Digital Marketing didirikan sejak tahun 2024 dengan tim yang terdiri dari orang-orang yang memiliki passion di bidang digital marketing dan digital advertising. Keahlian dan pengalaman kami telah menghadirkan jasa digital marketing yang efektif dan terjangkau untuk meningkatkan efektivitas pemasaran online bisnis Anda.
+        </p>
     </div>
 </section>
-<!-- visi misi section end -->
 
-<!-- perjalanan section start -->
-<section class="perjalanan-section">
+<section class="visi-misi">
     <div class="container">
-        <div class="col-perjalanan">
-            <h3>
-                Perjalanan
-            </h3>
-            <p>
-                Jago Digital Marketing didirikan sejak tahun 2024 dengan tim yang terdiri dari orang-orang yang memiliki passion di bidang digital marketing dan digital advertising. Keahlian dan pengalaman kami telah menghadirkan jasa digital marketing yang efektif dan terjangkau untuk meningkatkan efektifitas pemasaran online bisnis Anda.
-            </p>
+        <div class="visi">
+            <h3>Visi</h3>
+            <p><?= $tentang['visi'] ?></p>
+        </div>
+        <div class="misi">
+            <h3>Misi</h3>
+            <p><?= $tentang['misi'] ?></p>
         </div>
     </div>
 </section>
-<!-- perjalanan section end -->
 
-<!-- founder section start -->
-<section class="founder-section">
-    <div class="container">
-        <h3>Pendiri</h3>
-        <div class="row">
-            <div class="col-6 col-left">
-                <img src="<?= base_url('assets-new/images/founder/founder1.png') ?>" alt="Foto Pendiri" class="founder-image">
+<section class="founders-section">
+    <h2>Founder of Jago Digital Marketing</h2>
+    <p>Siapa sih pendiri dari Jago Digital Marketing? Yuk kenalan dulu!</p>
+    <div class="founders">
+        <?php foreach ($founder as $founder): ?>
+            <div class="founder-card">
+                <img src="<?= base_url('uploads/foto_founder/' . $founder->foto_founder) ?>" alt="<?= $founder->nama_founder ?>" class="profile-img">
+                <img src="<?= base_url('assets-new/images/logo.png') ?>" class="logo" alt="Logo">
+                <div class="info">
+                    <h3 class="card-title"><?= $founder->nama_founder ?></h3>
+                    <p class="card-text"><?= $founder->jabatan_founder ?></p>
+                </div>
             </div>
-            <div class="col-6 col-right">
-                <h2>Fernandes Raymond</h2>
-                <p>
-                    Sukses dengan bisnisnya di bidang IT dengan nama PT. Elecomp Indonesia, ia memiliki pengalaman luas di bidang IT, termasuk sebagai Facilitator PPEI di Kementerian Perdagangan Indonesia, Facilitator Gapura Digital, dan Business Owner NAKAM Foods Indonesia. Dengan berbagai potensi yang dimiliki baik di dunia IT maupun marketing, ia memutuskan untuk mendirikan sebuah pelatihan. Pelatihan ini bertujuan untuk memajukan UMKM yang masih kurang mumpuni dalam menghadapi perkembangan teknologi, dengan mengoptimalkan marketing melalui media yang ada saat ini.
-                </p>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
-<!-- founder section end -->
+
+
+
+<!-- css for founder -->
+<style>
+    .founders-section {
+        position: relative;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 20px;
+        margin: 90px auto 20px;
+        /* Added 50px margin-top for space above */
+        max-width: 1000px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+
+    .founders-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        border-radius: 20px;
+        background-color: #87D5C8;
+        z-index: -1;
+        border-radius: 20px 20px 0 0;
+    }
+
+
+
+    .founders-section h2,
+    .founders-section p {
+        margin: 0;
+        padding: 0 20px;
+        color: #fff;
+    }
+
+    .founders-section h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .founders-section p {
+        margin-bottom: 30px;
+    }
+
+    .founders {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .founder-card {
+        position: relative;
+        /* Needed for absolute positioning within the card */
+        background-color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 250px;
+        /* Adjust width as needed */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .founder-card img {
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .founder-card .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        /* Adjust the width as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        object-fit: contain;
+        /* Ensure image is contained within the width */
+    }
+
+
+    .founder-card .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 152, 0, 0.9);
+        /* Semi-transparent background for the text */
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: left;
+        border-radius: 0 0 20px 20px;
+        /* Match the bottom border-radius */
+    }
+
+    .founder-card h3 {
+        font-size: 18px;
+        /* Adjusted font size for the smaller card */
+        margin: 0;
+    }
+
+    .founder-card p {
+        font-size: 14px;
+        /* Adjusted font size for the smaller card */
+        margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+        .founders {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .founder-card {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .founder-card {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .founders-section h2 {
+            font-size: 24px;
+        }
+
+        .founders-section p {
+            font-size: 14px;
+        }
+
+        .founder-card h3 {
+            font-size: 18px;
+        }
+
+        .founder-card p {
+            font-size: 14px;
+        }
+    }
+</style>
+
 
 
 
 <!-- about us css -->
 <style>
     .about-us-section {
-        background-color: #FFF4FF;
-        padding: 100px 0;
+        position: relative;
+        padding: 50px 15px;
+        /* Reduced from 100px to 50px */
+        background: url('<?= base_url('assets-new/images/bg2.jpg') ?>') no-repeat center center;
+        background-size: cover;
+        min-height: 50vh;
+        /* Adjusted from 0vh to 50vh for better height control */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
 
     .about-us-section h2 {
         font-size: 2.5rem;
         font-weight: bold;
-        color: #933393;
+        color: #FFFFFF;
         /* Warna teks dan garis bawah */
         margin-bottom: 10px;
-        border-bottom: 3px solid #933393;
+        border-bottom: 3px solid #FFFFFF;
         /* Warna garis bawah */
         display: inline-block;
         padding-bottom: 5px;
@@ -105,7 +249,7 @@
 
     .about-us-section p {
         font-size: 1.2rem;
-        color: #555;
+        color: #FFFFFF;
     }
 </style>
 
@@ -119,7 +263,7 @@
     }
 
     .paragraf-section h4 {
-        color: #933393;
+        color: #202020;
         margin: 0 auto 30px;
         /* Mengatur margin bawah dan sentralisasi */
         max-width: 800px;
@@ -169,120 +313,91 @@
     }
 </style>
 
-<!-- perjalanan css -->
+<!-- perjalanan for section -->
 <style>
-    .perjalanan-section {
-        background-color: #E0E0E0;
-        /* Warna background */
-        padding: 50px 0;
+    /* Perjalanan Section */
+    .perjalanan {
+        background-color: #87D5C8;
+        padding: 40px 0;
         text-align: center;
-        /* Mengatur teks agar berada di tengah */
-        color: #121212;
-        /* Warna teks */
+        color: white;
     }
 
-    .perjalanan-section h3 {
-        font-size: 2rem;
-        font-weight: 500;
+    .perjalanan .section-title {
+        font-size: 35px;
+        color: white;
+        font-weight: bold;
         margin-bottom: 20px;
-        color: #121212;
-        /* Warna teks judul */
     }
 
-    .perjalanan-section p {
-        font-size: 1.2rem;
+    .perjalanan-description {
         max-width: 800px;
-        /* Lebar maksimal paragraf */
         margin: 0 auto;
-        line-height: 1.6;
-    }
-</style>
-
-<!-- /* founder section css */ -->
-<style>
-    .founder-section {
-        padding: 50px 0;
-        background-color: #E0E0E0;
-        /* Warna background */
+        font-size: 18px;
     }
 
-    .founder-section h3 {
-        text-align: center;
-        color: #121212;
-        /* Warna judul */
-        font-size: 2rem;
-        margin-bottom: 40px;
+    /* Visi & Misi Section */
+    .visi-misi {
+        position: relative;
+        padding: 40px 0;
     }
 
-    .founder-section .row {
+    .visi-misi::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 35%;
+        /* Adjusted to 35% as per your preference */
+        background-color: #87D5C8;
+        z-index: -1;
+        /* Sends the background behind the content */
+    }
+
+    .visi-misi .container {
         display: flex;
-        flex-wrap: wrap;
-        /* Mengizinkan kolom untuk membungkus ke baris berikutnya pada layar kecil */
-        align-items: center;
-    }
-
-    .founder-section .col-6 {
-        flex: 0 0 50%;
-        /* Membagi kolom menjadi 50% masing-masing pada layar besar */
-        box-sizing: border-box;
-        /* Mengatur kotak model untuk padding dan border */
-    }
-
-    .founder-section .founder-image {
-        width: 80%;
-        /* Mengatur lebar gambar agar proporsional */
-        height: auto;
-        border-radius: 10px;
-        /* Menambahkan sedikit efek melengkung pada gambar */
-        display: block;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
-        /* Memastikan gambar berada di tengah */
     }
 
-    .founder-section .col-6 h2 {
-        font-size: 2rem;
-        color: #933393;
-        margin-bottom: 10px;
+    .visi,
+    .misi {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: -1px 0px 0px 7px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        position: relative;
+        z-index: 1;
+        /* Ensures the cards appear above the background color */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Vertically centers the content */
+        align-items: center;
+        /* Horizontally centers the content */
+        text-align: center;
+        /* Centers text horizontally */
     }
 
-    .founder-section .col-6 p {
-        font-size: 1.2rem;
-        color: #555;
-        line-height: 1.6;
-        text-align: justify;
+    .visi h3,
+    .misi h3 {
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: underline;
+        /* Adds an underline to the title */
+        margin-bottom: 15px;
     }
 
-    .founder-section .col-6 strong {
-        font-size: 1.4rem;
-        color: #333;
-    }
-
-    /* Media Query untuk layar kecil */
-    @media (max-width: 768px) {
-        .founder-section .col-6 {
-            flex: 0 0 100%;
-            /* Kolom akan mengambil 100% lebar pada layar kecil */
-            max-width: 100%;
-            /* Memastikan kolom memanfaatkan seluruh lebar yang tersedia */
-        }
-
-        .founder-section .col-left,
-        .founder-section .col-right {
-            padding: 0 15px;
-            /* Memberikan ruang di kiri dan kanan teks */
-            box-sizing: border-box;
-            /* Mengatur kotak model untuk padding dan border */
-        }
-
-        .founder-section .col-right {
-            margin-top: 20px;
-            /* Menambahkan jarak antara gambar dan teks */
-        }
-
-        .founder-section .founder-image {
-            margin-bottom: 20px;
-            /* Menambahkan margin bawah untuk gambar agar tidak terlalu rapat dengan teks */
-        }
+    .visi p,
+    .misi p {
+        font-size: 16px;
+        text-align: center;
+        /* Centers text horizontally */
     }
 </style>
 

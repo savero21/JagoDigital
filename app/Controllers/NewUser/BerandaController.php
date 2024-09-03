@@ -3,40 +3,68 @@
 namespace App\Controllers\NewUser;
 
 use App\Controllers\NewUser\BaseController;
+use App\Models\ArtikelModel;
+use App\Models\FounderModels;
+use App\Models\KategoriVideoModels;
+use App\Models\KeuntunganModel;
+use App\Models\PengumumanModels;
 use App\Models\TentangModels;
+use App\Models\VideoPembelajaranModels;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class BerandaController extends BaseController
 {
+
     public function index()
     {
+        $keuntunganModel = new KeuntunganModel();
+        $keuntungan = $keuntunganModel->findAll();
+
+        $founderModel = new FounderModels();
+        $founder = $founderModel->findAll();
+
+        $pengumumanModel = new PengumumanModels(); // Ensure this is the correct model
+        $today = date('Y-m-d'); // Get today's date
+        $pengumuman = $pengumumanModel->getHomePengumuman($today); // Fetch announcements
+
+        // Slice the array to get the latest 3 if more are returned
+        $pengumuman = array_slice($pengumuman, 0, 3);
+
         return $this->render('NewUser/beranda/index', [
-            'title' => 'Beranda'
+            'title' => 'Beranda',
+            'keuntungan' => $keuntungan,
+            'founder' => $founder,
+            'pengumuman' => $pengumuman
         ]);
     }
+
+
 
     public function about()
     {
+        // Load Tentang Model
         $tentang_model = new TentangModels();
-        $tentang = $tentang_model->first();
+        // Get the first record from Tentang table
+        $tentang = $tentang_model->first(); // Returns an object of stdClass
+
+        $founderModel = new FounderModels();
+        $founder = $founderModel->findAll();
+
+
         return $this->render('NewUser/beranda/about', [
             'tentang' => $tentang,
-            'title' => 'Tentang Kami'
+            'title' => 'Tentang Kami',
+            'founder' => $founder
         ]);
     }
 
-
-    public function artikel()
+    public function kontak()
     {
-        return view('NewUser/beranda/artikel', [
-            'title' => 'Artikel'
+        return $this->render('NewUser/beranda/kontak', [
+            'title' => 'Kontak'
         ]);
     }
 
-    public function video()
-    {
-        return view('NewUser/beranda/materi-pembelajaran', [
-            'title' => 'Video'
-        ]);
-    }
+    
+
 }

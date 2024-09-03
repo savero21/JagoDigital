@@ -3,7 +3,7 @@
 namespace App\Controllers\admin;
 
 use App\Models\SocialMediaModels;
-use App\Controllers\BaseController;
+    use App\Controllers\BaseController;
 
 class SocialMedia extends BaseController
 {

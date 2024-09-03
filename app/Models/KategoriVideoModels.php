@@ -11,4 +11,5 @@ class KategoriVideoModels extends Model
     protected $returnType = "object";
     protected $useAutoIncrement = true;
     protected $allowedFields = ['nama_kategori_video'];
+    
 }
