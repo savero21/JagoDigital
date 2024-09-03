@@ -33,10 +33,15 @@ $routes->setAutoRoute(true);
 
 $routes->get('/',  'NewUser\BerandaController::index');
 $routes->get('/about', 'NewUser\BerandaController::about');
-$routes->get('/artikel', 'NewUser\BerandaController::artikel');
-$routes->get('/video', 'NewUser\BerandaController::video');
-$routes->get('/video/(:num)', 'NewUser\Videoctrl::categoryDetails/$1');
-$routes->get('/video/detail/(:num)', 'NewUser\Videoctrl::detail/$1');
+
+$routes->get('/video', 'NewUser\VideoController::index');
+$routes->get('/video/(:num)', 'NewUser\VideoController::categoryDetails/$1');
+$routes->get('/video/category/(:num)', 'NewUser\VideoController::detail/$1');
+
+
+$routes->get('/artikel', 'NewUser\ArtikelController::artikel');
+$routes->get('/artikel/all', 'NewUser\ArtikelController::all');
+$routes->get('/artikel/(:segment)', 'NewUser\ArtikelController::detail/$1');
 
 $routes->get('/kontak', 'NewUser\BerandaController::kontak');
 

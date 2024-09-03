@@ -46,7 +46,8 @@
 
 <section class="container-fluid features-section">
     <div class="content-wrapper">
-        <div class="row feature-details">
+        <div class="row feature-details" style="background-color: #87D5C8;
+        color: #ffffff; border-radius: 15px;">
             <div class="col-md-6 mt-5">
                 <div class="feature-header">
                     <h1>Kenapa Jago Digital Marketing<br>Paling Tepat Buat Upskilling?</h1>
@@ -68,27 +69,15 @@
                 </div>
             </div>
             <div class="col-md-6 mt-5 d-flex flex-column align-items-center">
-                <div class="card-custom"> <!-- Repeat this block for each card -->
-                    <img src="<?= base_url('assets-new/images/bg1.jpg') ?>" alt="Image" class="profile-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Kartu 1</h5>
-                        <p class="card-text">Ini adalah teks dalam kartu.</p>
+                <?php foreach ($keuntungan as $item): ?>
+                    <div class="card-custom">
+                        <img src="<?= base_url('uploads/icons/' . $item['icon_keuntungan']) ?>" alt="<?= $item['judul_keuntungan'] ?>" class="profile-img">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $item['judul_keuntungan'] ?></h5>
+                            <p class="card-text"><?= $item['deskripsi_keuntungan'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="card-custom"> <!-- Repeat this block for each card -->
-                    <img src="<?= base_url('assets-new/images/bg1.jpg') ?>" alt="Image" class="profile-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Kartu 2</h5>
-                        <p class="card-text">Ini adalah teks dalam kartu.</p>
-                    </div>
-                </div>
-                <div class="card-custom"> <!-- Repeat this block for each card -->
-                    <img src="<?= base_url('assets-new/images/bg1.jpg') ?>" alt="Image" class="profile-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Kartu 3</h5>
-                        <p class="card-text">Ini adalah teks dalam kartu.</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 </section>
@@ -114,7 +103,7 @@
                     <div class="card-body">
                         <!-- Text Section -->
                         <div class="hero-text">
-                            <h1 style="color: #933393;">Masih Bingung dan Galau <br> Mau Ikut Pelatihan JDM?</h1>
+                            <h1 style="color: #87D5C8;">Masih Bingung dan Galau <br> Mau Ikut Pelatihan JDM?</h1>
                             <br>
                             <p style="color:#000000">Coba simak penjelasan singkat dari salah satu mentor Pelatihan Jago <br> Digital Marketing disamping ini.</p>
                         </div>
@@ -126,7 +115,7 @@
                                 style="width: 100%; max-width: 100%; height: auto;"
                                 controls
                                 preload="auto"
-                                src="https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview"
+                                src=" https://drive.google.com/file/d/1t9j65vDskKEkI4PZ0pEbPOq_rmoGJEa9/preview"
                                 sandbox="allow-scripts allow-same-origin"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -139,6 +128,47 @@
         </div>
     </div>
 </section>
+
+<section class="founders-section">
+    <h2>Founder of Jago Digital Marketing</h2>
+    <p>Siapa sih pendiri dari Jago Digital Marketing? Yuk kenalan dulu!</p>
+    <div class="founders">
+        <?php foreach ($founder as $founder): ?>
+            <div class="founder-card">
+                <img src="<?= base_url('uploads/foto_founder/' . $founder->foto_founder) ?>" alt="<?= $founder->nama_founder ?>" class="profile-img">
+                <img src="<?= base_url('assets-new/images/logo.png') ?>" class="logo" alt="Logo">
+                <div class="info">
+                    <h3 class="card-title"><?= $founder->nama_founder ?></h3>
+                    <p class="card-text"><?= $founder->jabatan_founder ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+
+<section class="event-section">
+    <h2>Pengumuman Terkini dari Jago Digital Marketing</h2>
+    <p class="subheading">
+        "Jangan lewatkan kesempatan ini untuk bergabung dengan para ahli di Pengumuman Terkini dari Jago Digital Marketing!"
+    </p>
+    <div class="events-container">
+        <?php foreach ($pengumuman as $event): ?>
+            <div class="event-card">
+                <div class="image-container">
+                    <img src="<?= base_url('assets-baru/img/' . $event['poster_pengumuman']) ?>" alt="<?= esc($event['judul_pengumuman']) ?>">
+                </div>
+                <div class="event-details">
+                    <h3><?= esc($event['judul_pengumuman']) ?></h3>
+                    <p><?= esc(strip_tags($event['deskripsi_pengumuman'])) ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button class="view-all-btn">Lihat semua</button>
+</section>
+
+
 
 
 <!-- New section with gap and centered title -->
@@ -245,22 +275,276 @@
     </div>
 </section>
 
+<!-- css for event -->
+<style>
+    .event-section {
+        text-align: center;
+        padding: 50px;
+        background-color: #FFFFFF;
+    }
 
+    .event-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .subheading {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    .events-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .event-card {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container {
+        position: relative;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .category-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        font-weight: bold;
+        color: #333;
+        border-radius: 3px;
+    }
+
+    .event-details {
+        padding: 20px;
+        text-align: left;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .event-details p {
+        font-size: 1rem;
+        color: #777;
+        margin-bottom: 10px;
+        flex-grow: 1;
+    }
+
+    .event-location {
+        font-size: 1.2rem;
+        /* Ukuran teks sedikit diperbesar */
+        color: #ff8c00;
+        /* Warna oranye */
+        font-weight: bold;
+    }
+
+    .view-all-btn {
+        background-color: #ff8c00;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1rem;
+        margin-top: 30px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .view-all-btn:hover {
+        background-color: #e67e00;
+    }
+</style>
+
+<!-- css for founder -->
+<style>
+    .founders-section {
+        position: relative;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 20px;
+        margin: 90px auto 20px;
+        /* Added 50px margin-top for space above */
+        max-width: 1000px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+
+    .founders-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        border-radius: 20px;
+        background-color: #87D5C8;
+        z-index: -1;
+        border-radius: 20px 20px 0 0;
+    }
+
+
+
+    .founders-section h2,
+    .founders-section p {
+        margin: 0;
+        padding: 0 20px;
+        color: #fff;
+    }
+
+    .founders-section h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .founders-section p {
+        margin-bottom: 30px;
+    }
+
+    .founders {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .founder-card {
+        position: relative;
+        /* Needed for absolute positioning within the card */
+        background-color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 250px;
+        /* Adjust width as needed */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .founder-card img {
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .founder-card .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        /* Adjust the width as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        object-fit: contain;
+        /* Ensure image is contained within the width */
+    }
+
+
+    .founder-card .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 152, 0, 0.9);
+        /* Semi-transparent background for the text */
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: left;
+        border-radius: 0 0 20px 20px;
+        /* Match the bottom border-radius */
+    }
+
+    .founder-card h3 {
+        font-size: 18px;
+        /* Adjusted font size for the smaller card */
+        margin: 0;
+    }
+
+    .founder-card p {
+        font-size: 14px;
+        /* Adjusted font size for the smaller card */
+        margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+        .founders {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .founder-card {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .founder-card {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .founders-section h2 {
+            font-size: 24px;
+        }
+
+        .founders-section p {
+            font-size: 14px;
+        }
+
+        .founder-card h3 {
+            font-size: 18px;
+        }
+
+        .founder-card p {
+            font-size: 14px;
+        }
+    }
+</style>
 
 <!-- css for banner -->
 <style>
     /* Section Banner Styles */
     .banner {
         position: relative;
-        padding: 100px 15px;
+        padding: 50px 15px;
+        /* Reduced from 100px to 50px */
         background: url('<?= base_url('assets-new/images/bg1.jpg') ?>') no-repeat center center;
         background-size: cover;
-        min-height: 100vh;
+        min-height: 50vh;
+        /* Adjusted from 0vh to 50vh for better height control */
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
 
     .banner .row.align-items-center {
         position: relative;
@@ -395,7 +679,7 @@
     /* Centered title with purple color */
     .gap-section .title {
         font-size: 2rem;
-        color: #933393;
+        color: #121212;
         font-weight: 700;
         /* Purple color */
         margin-bottom: 20px;
@@ -414,9 +698,8 @@
 <!-- css for fitur -->
 <style>
     .features-section {
-        background-color: #77287d;
-        color: #ffffff;
-        padding: 0 2rem;
+        padding-inline-start: 100px;
+        padding-inline-end: 100px;
     }
 
     .feature-header h1,
@@ -425,14 +708,14 @@
         font-weight: 800;
         color: #ffffff;
         margin-bottom: 20px;
-        margin-left: 150px;
+
     }
 
     .feature-header p,
     .feature-stats p {
         font-size: 1rem;
         color: #ffffff;
-        margin-left: 150px;
+
     }
 
     .feature-header {
@@ -450,10 +733,9 @@
     .features-section .card-custom {
         display: flex;
         align-items: center;
-        color: #121212;
+        color: #700707;
         height: 70%;
         width: 100%;
-        max-width: 350px;
         margin-bottom: 30px;
         background-color: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
@@ -506,6 +788,11 @@
             /* Center align text on small screens */
         }
 
+        .features-section {
+            padding-inline-start: 20px;
+            padding-inline-end: 20px;
+        }
+
         .feature-header p,
         .feature-stats p {
             font-size: 0.9rem;
@@ -533,8 +820,8 @@
         margin: 0 auto;
         /* Mengatur kartu agar berada di tengah */
         padding: 20px;
-        /* Memberikan ruang internal pada kartu */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Memberikan ruang internal pad    a kartu */
+        box-shadow: 13px 9px 0px 0px rgb(135 213 200);
         /* Memberikan efek bayangan ringan */
         border-radius: 10px;
         /* Membuat sudut kartu menjadi lebih halus */
