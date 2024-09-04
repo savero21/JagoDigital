@@ -3,7 +3,7 @@
 
 <div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
-        <h1 class="app-page-title">Daftar Keuntungan</h1>
+        <h1 class="app-page-title">Daftar Keuntungan Peli</h1>
         <?= session()->getFlashdata('success') ? '<div class="alert alert-success">' . session()->getFlashdata('success') . '</div>' : '' ?>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a href="<?= base_url('admin/keuntungan/tambah') ?>" class="btn btn-primary me-md-2"> + Tambah Keuntungan</a>
